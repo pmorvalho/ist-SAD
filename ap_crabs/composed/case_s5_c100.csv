@@ -1,5 +1,0 @@
-  support confidence lift leverage jaccard
-1    0.05          1    2    0.025     0.1
-
-"rules","support","confidence","lift","count"
-"{FL=15,RW=13} => {sex=1}",0.05,1,2,10

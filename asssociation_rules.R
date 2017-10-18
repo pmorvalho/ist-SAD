@@ -25,8 +25,8 @@ factor_all = function(table_d) {
 
 
 apriori_all = function(dataset, folder) {
-	for (s in seq(5, 100, by=10)) {
-		for (c in seq(50, 100, by=10)) {
+	for (s in seq(5, 100, by=45)) {
+		for (c in seq(50, 100, by=25)) {
 			s_i <- s / 100
 			c_i <- c / 100
 			print(c(s,"__",c))
