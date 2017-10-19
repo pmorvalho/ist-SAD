@@ -1,0 +1,21 @@
+=======================================
+Rules with supp=65 and conf=50
+=======================================
+""
+
+[1] support    confidence lift       leverage   jaccard   
+<0 rows> (or 0-length row.names)
+=======================================
+Rules with supp=65 and conf=75
+=======================================
+""
+
+[1] support    confidence lift       leverage   jaccard   
+<0 rows> (or 0-length row.names)
+=======================================
+Rules with supp=65 and conf=100
+=======================================
+""
+
+[1] support    confidence lift       leverage   jaccard   
+<0 rows> (or 0-length row.names)
