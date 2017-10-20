@@ -1,0 +1,22 @@
+intraclust = c("complete","average","centroid")
+interclust = c("single", "complete", "average","centroid", "aveToCent", "hausdorff")
+crabs_fact <- read_csv("data/base_crabs.csv")
+library(readr)
+library(dplyr)
+library(ggplot2)
+library(clv)
+crabs_fact <- read_csv("data/base_crabs.csv")
+crabs_clust <- kmeans(crabs_fact, 2)
+silhouette
+silhouette()
+silhouette(crabs_clust)
+crabs_clust
+silhouette(crabs_clust$cluster)
+diss <- as.matrix(dist(crabs_fact))
+diss
+crabs_clust$cluster
+silhouette(crabs_clust$cluster, dmatrix=diss)
+mean(silhouette(crabs_clust$cluster, dmatrix=diss))
+silhouette(crabs_clust$cluster, dmatrix=diss)[,3]
+mean(silhouette(crabs_clust$cluster, dmatrix=diss)[,3])
+savehistory("silhoutecof")

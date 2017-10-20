@@ -1,14 +1,4 @@
 =======================================
-Rules with supp=50 and conf=50
-=======================================
-"rules","support","confidence","lift","count"
-"{} => {sex=[0.00,0.25)}",0.5,0.5,1,100
-"{} => {sex=[0.75,1.00]}",0.5,0.5,1,100
-
-  support confidence lift leverage jaccard
-1     0.5        0.5    1        0     0.5
-2     0.5        0.5    1        0     0.5
-=======================================
 Rules with supp=50 and conf=75
 =======================================
 ""
@@ -16,7 +6,11 @@ Rules with supp=50 and conf=75
 [1] support    confidence lift       leverage   jaccard   
 <0 rows> (or 0-length row.names)
 =======================================
-Rules with supp=50 and conf=100
+Rules with supp=50 and conf=85
+=======================================
+
+=======================================
+Rules with supp=50 and conf=95
 =======================================
 ""
 
