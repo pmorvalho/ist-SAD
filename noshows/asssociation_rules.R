@@ -42,7 +42,7 @@ apriori_all = function(dataset, folder) {
 			}
 
 			# summary <- summary(rules)
-			# write(summary, file=paste(c("ap_crabs/summary_s",s,"_c",c,".csv"), collapse=""))
+			# write(summary, file=paste(c("ap_noshows/summary_s",s,"_c",c,".csv"), collapse=""))
 
 			write(rules,
 				file = paste(c(folder,"/","rules_s",s,"_c",c,".csv"), collapse=""),
@@ -58,25 +58,25 @@ apriori_all = function(dataset, folder) {
 
 }
 
-crabs_fact <- read_csv("data/truncint_crabs.csv")
-crabs_fact = factor_all(crabs_fact)
-#rules <- apriori(crabs_fact, parameter=list(supp=0.05,conf=0.5,target="rules"))
+noshows_base <- read_csv("data/base_noshows.csv") #_noAppointmentID.csv")
+noshows_base = factor_all(noshows_base)
+#rules <- apriori(noshows_base, parameter=list(supp=0.05,conf=0.5,target="rules"))
 #plot(rules)
 
 #discretize_all(dados, tipo de discretizacao, numero de bins)
-crabs_d_fr <- read_csv("data/base_crabs.csv")
-crabs_d_fr = discretize_all(crabs_d_fr, "frequency", 4)
+noshows_d_fr <- read_csv("data/base_noshows.csv") #_noAppointmentID.csv")
+noshows_d_fr = discretize_all(noshows_d_fr, "frequency", 4)
 
-crabs_d_int <- read_csv("data/base_crabs.csv")
-crabs_d_int = discretize_all(crabs_d_int, "interval", 3)
+noshows_d_int <- read_csv("data/base_noshows.csv") #_noAppointmentID.csv")
+noshows_d_int = discretize_all(noshows_d_int, "interval", 3)
 
 
 
-# apriori_all(crabs_fact,"ap_crabs_trunc")
+apriori_all(noshows_base,"ap_noshows") #_noAppointmentID")
 
-# apriori_all(crabs_d_fr,"ap_crabs_freq")
+# apriori_all(noshows_d_fr,"ap_noshows_freq")
 
-apriori_all(crabs_fact,"ap_crabs_trunc")
+# apriori_all(noshows_fact,"ap_noshows_trunc")
 
 #plot(rules, measure=c("support", "confidence"), shading="lift"))
 # plot(rules, method="graph", control=list(type="itemsets"))
@@ -85,7 +85,7 @@ apriori_all(crabs_fact,"ap_crabs_trunc")
 
 
 # apriori(dados, parameter=list(support, confidence, target="rules"))
-#rules <- apriori(crabs, parameter=list(supp=0.05,conf=0.5,target="rules"))
+#rules <- apriori(noshows, parameter=list(supp=0.05,conf=0.5,target="rules"))
 
 
 
@@ -96,11 +96,11 @@ apriori_all(crabs_fact,"ap_crabs_trunc")
 # capture.output(ord_rules, file="cap_ord_rules.txt")
 
 # discretize_all(dados, tipo de discretizacao, numero de bins)
-# crabs <- read_csv("base_crabs.csv")
-# crabs_d_fr = discretize_all(crabs, "frequency", 5)
-# crabs_d_int = discretize_all(crabs, "interval", 5)
+# noshows <- read_csv("base_noshows.csv")
+# noshows_d_fr = discretize_all(noshows, "frequency", 5)
+# noshows_d_int = discretize_all(noshows, "interval", 5)
 
-# rules_i <- apriori(crabs_d_int, parameter=list(supp=0.05,conf=0.5,target="rules"))
+# rules_i <- apriori(noshows_d_int, parameter=list(supp=0.05,conf=0.5,target="rules"))
 # inspect(rules_i)
 
 # # devolve estatisticas resumidas sobre as regras geradas pelo apriori
@@ -114,7 +114,7 @@ apriori_all(crabs_fact,"ap_crabs_trunc")
 #       row.names = FALSE)
 
 # # interestMeasure devolve metricas mais especializadas dos dados
-# interest <- interestMeasure(rules_i, c("support","confidence","lift","leverage","jaccard"), transactions=crabs)
+# interest <- interestMeasure(rules_i, c("support","confidence","lift","leverage","jaccard"), transactions=noshows)
 # capture.output(interest, file="interest_rules_i.txt")
 
 
