@@ -13,18 +13,18 @@ print "Ja tratou dos sexos"
 # drop da coluna sp porque estamos a trabalhar em clustering
 dataset.drop('No-show',1,inplace=True)
 
-# di = set(dataset['Neighbourhood'])
+di = set(dataset['Neighbourhood'])
 
-# dic = []
-# i=1
-# for d in di:
-# 	dic.append((d, i))
-# 	i+=1
+dic = []
+i=1
+for d in di:
+	dic.append((d, i))
+	i+=1
 
-# dic= dict(dic)
+dic= dict(dic)
 
-# for d in dic:
-# 	dataset['Neighbourhood'] = dataset['Neighbourhood'].replace(d,dic[d])
+for d in dic:
+ 	dataset['Neighbourhood'] = dataset['Neighbourhood'].replace(d,dic[d])
 
 # print "Ja tratou das Localidades"
 
