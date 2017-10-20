@@ -7,9 +7,13 @@ kmeans_wrapper = function(dataset, folder, centroids){
 	noshows_fact <- read_csv(dataset)
 	diss <- as.matrix(dist(noshows_fact))
 
-	noshows_clust <- kmeans(dataset, centroids)
-	cls.scatt <- cls.scatt.data(dataset, noshows_clust$cluster, dist="manhattan")
+	print("antes do kmeans")
+	noshows_clust <- kmeans(noshows_fact, centroids)
 
+	print("antes do scatt")
+	cls.scatt <- cls.scatt.data(noshows_fact, noshows_clust$cluster, dist="manhattan")
+
+	print("antes do dunn")
 	dunn <- clv.Dunn(cls.scatt, intraclust, interclust)
 	dunn <- capture.output(dunn)
 
@@ -42,16 +46,10 @@ kmeans_wrapper = function(dataset, folder, centroids){
 	cat(silhouette, file=paste(c(folder,"/","all_silhouettes.csv"),collapse=""),sep="\n",append=TRUE)
 
 	pdf("cls_plots.pdf")
-	print(ggplot(dataset, aes(sex, FL, color=noshows_clust$cluster)) + geom_point())
-	print(ggplot(dataset, aes(sex, RW, color=noshows_clust$cluster)) + geom_point())
-	print(ggplot(dataset, aes(sex, CL, color=noshows_clust$cluster)) + geom_point())
-	print(ggplot(dataset, aes(sex, CW, color=noshows_clust$cluster)) + geom_point())
-	print(ggplot(dataset, aes(sex, BD, color=noshows_clust$cluster)) + geom_point())
-
-	print(ggplot(dataset, aes(RW, FL, color=noshows_clust$cluster)) + geom_point())
-	print(ggplot(dataset, aes(RW, CL, color=noshows_clust$cluster)) + geom_point())
-	print(ggplot(dataset, aes(RW, CW, color=noshows_clust$cluster)) + geom_point())
-	print(ggplot(dataset, aes(RW, BD, color=noshows_clust$cluster)) + geom_point())
+	print(ggplot(noshows_fact, aes(AppointmentDay, SMS_received, color=noshows_clust$cluster)) + geom_point())
+	print(ggplot(noshows_fact, aes(AppointmentDay, ScheduledDay, color=noshows_clust$cluster)) + geom_point())
+	print(ggplot(noshows_fact, aes(ScheduledDay, SMS_received, color=noshows_clust$cluster)) + geom_point())
+	print(ggplot(noshows_fact, aes(Gender, Scholarship, color=noshows_clust$cluster)) + geom_point())
 	dev.off()
 }
 
