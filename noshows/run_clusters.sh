@@ -1,12 +1,12 @@
 #!/bin/bash
-rm kmeans_noshows_base/*
+rm -r kmeans_noshows_base/*
 mkdir kmeans_noshows_base
 
-for (( s = 0; s < 10; sample++ )); do
+for (( s = 0; s < 10; s++ )); do
 	for (( i = 2; i < 10; i++ )); do
-		
-		Rscript clusters.R data/base_kmeans_sample_${s}.csv kmeans_noshows_base ${i}
-		mv cls_plots.pdf kmeans_noshows_base/plots_s${s}_cls${i}.pdf
+		mkdir kmeans_noshows_base/sample_s${s}
+		Rscript clusters.R data/base_kmeans_sample_${s}.csv kmeans_noshows_base/sample_s${s} ${i}
+		mv cls_plots.pdf kmeans_noshows_base/sample_s${s}/plots_s${s}_cls${i}.pdf
 
 	done	
 done

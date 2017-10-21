@@ -7,13 +7,10 @@ kmeans_wrapper = function(dataset, folder, centroids){
 	noshows_fact <- read_csv(dataset)
 	diss <- as.matrix(dist(noshows_fact))
 
-	print("antes do kmeans")
 	noshows_clust <- kmeans(noshows_fact, centroids)
 
-	print("antes do scatt")
 	cls.scatt <- cls.scatt.data(noshows_fact, noshows_clust$cluster, dist="manhattan")
 
-	print("antes do dunn")
 	dunn <- clv.Dunn(cls.scatt, intraclust, interclust)
 	dunn <- capture.output(dunn)
 
