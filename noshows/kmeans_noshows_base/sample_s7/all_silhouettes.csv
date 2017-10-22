@@ -1,24 +1,27 @@
 
 With 2 centroids
-[1] 0.9374562
+[1] 0.8589296
 
 With 3 centroids
-[1] 0.9201044
+[1] 0.8275067
 
 With 4 centroids
-[1] 0.7574627
+[1] 0.675021
 
 With 5 centroids
-[1] 0.7965078
+[1] 0.6910636
 
 With 6 centroids
-[1] 0.8082824
+[1] 0.6965154
 
 With 7 centroids
-[1] 0.7728747
+[1] 0.6665438
 
 With 8 centroids
-[1] 0.7937615
+[1] 0.6735865
 
 With 9 centroids
-[1] 0.8031934
+[1] 0.6794469
+
+With 10 centroids
+[1] 0.6617723
