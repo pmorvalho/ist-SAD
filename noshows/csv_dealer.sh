@@ -16,7 +16,7 @@ done
 
 rm csv_dealer.py
 
-cd ../ap_noshows_noAppointmentID
+cd ../ap_noshows_freq_4
 
 # rm ../dic.txt
 # echo "" > ../dic.txt

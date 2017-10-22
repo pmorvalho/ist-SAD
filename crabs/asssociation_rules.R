@@ -68,7 +68,7 @@ crabs_d_fr <- read_csv("data/base_crabs.csv")
 crabs_d_fr = discretize_all(crabs_d_fr, "frequency", 4)
 
 crabs_d_int <- read_csv("data/base_crabs.csv")
-crabs_d_int = discretize_all(crabs_d_int, "interval", 4)
+crabs_d_int = discretize_all(crabs_d_int, "interval", 3)
 
 
 
@@ -76,7 +76,7 @@ crabs_d_int = discretize_all(crabs_d_int, "interval", 4)
 
 # apriori_all(crabs_d_fr,"ap_crabs_freq")
 
-apriori_all(crabs_d_int,"ap_crabs_int_4")
+apriori_all(crabs_fact,"ap_crabs_trunc")
 
 #plot(rules, measure=c("support", "confidence"), shading="lift"))
 # plot(rules, method="graph", control=list(type="itemsets"))

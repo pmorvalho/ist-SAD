@@ -1,0 +1,167 @@
+"rules","support","confidence","lift","count"
+"{AppointmentDay=20} => {SMS_received=0}",0.194135646002318,1,1.47236254581806,21445
+"{ScheduledDay=20,AppointmentDay=20} => {SMS_received=0}",0.0921657734646582,1,1.47236254581806,10181
+"{AppointmentDay=20,Age=[ 0, 19)} => {SMS_received=0}",0.052143684820394,1,1.47236254581806,5760
+"{ScheduledDay=[18,20),AppointmentDay=20} => {SMS_received=0}",0.0603726100811124,1,1.47236254581806,6669
+"{Gender=0,AppointmentDay=20} => {SMS_received=0}",0.0681670046349942,1,1.47236254581806,7530
+"{Gender=1,AppointmentDay=20} => {SMS_received=0}",0.125968641367323,1,1.47236254581806,13915
+"{AppointmentDay=20,Hipertension=0} => {SMS_received=0}",0.157616961181924,1,1.47236254581806,17411
+"{AppointmentDay=20,Scholarship=0} => {SMS_received=0}",0.175686196407879,1,1.47236254581806,19407
+"{AppointmentDay=20,Diabetes=0} => {SMS_received=0}",0.180773826767092,1,1.47236254581806,19969
+"{AppointmentDay=20,Alcoholism=0} => {SMS_received=0}",0.1882966396292,1,1.47236254581806,20800
+"{AppointmentDay=20,Handcap=0} => {SMS_received=0}",0.190161500579374,1,1.47236254581806,21006
+"{Gender=1,ScheduledDay=20,AppointmentDay=20} => {SMS_received=0}",0.0575753186558517,1,1.47236254581806,6360
+"{ScheduledDay=20,AppointmentDay=20,Hipertension=0} => {SMS_received=0}",0.0746849652375434,1,1.47236254581806,8250
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0} => {SMS_received=0}",0.0833484212050985,1,1.47236254581806,9207
+"{ScheduledDay=20,AppointmentDay=20,Diabetes=0} => {SMS_received=0}",0.085276651216686,1,1.47236254581806,9420
+"{ScheduledDay=20,AppointmentDay=20,Alcoholism=0} => {SMS_received=0}",0.0888796349942063,1,1.47236254581806,9818
+"{ScheduledDay=20,AppointmentDay=20,Handcap=0} => {SMS_received=0}",0.0897668018539977,1,1.47236254581806,9916
+"{AppointmentDay=20,Age=[ 0, 19),Hipertension=0} => {SMS_received=0}",0.0520893684820394,1,1.47236254581806,5754
+"{AppointmentDay=20,Age=[ 0, 19),Diabetes=0} => {SMS_received=0}",0.0520350521436848,1,1.47236254581806,5748
+"{AppointmentDay=20,Age=[ 0, 19),Alcoholism=0} => {SMS_received=0}",0.0521074739281576,1,1.47236254581806,5756
+"{AppointmentDay=20,Age=[ 0, 19),Handcap=0} => {SMS_received=0}",0.0515643105446118,1,1.47236254581806,5696
+"{ScheduledDay=[18,20),AppointmentDay=20,Scholarship=0} => {SMS_received=0}",0.0542801274623407,1,1.47236254581806,5996
+"{ScheduledDay=[18,20),AppointmentDay=20,Diabetes=0} => {SMS_received=0}",0.0558643539976825,1,1.47236254581806,6171
+"{ScheduledDay=[18,20),AppointmentDay=20,Alcoholism=0} => {SMS_received=0}",0.0585892236384705,1,1.47236254581806,6472
+"{ScheduledDay=[18,20),AppointmentDay=20,Handcap=0} => {SMS_received=0}",0.05939491599073,1,1.47236254581806,6561
+"{Gender=0,AppointmentDay=20,Hipertension=0} => {SMS_received=0}",0.0580189020857474,1,1.47236254581806,6409
+"{Gender=0,AppointmentDay=20,Scholarship=0} => {SMS_received=0}",0.0648265498261877,1,1.47236254581806,7161
+"{Gender=0,AppointmentDay=20,Diabetes=0} => {SMS_received=0}",0.0644825463499421,1,1.47236254581806,7123
+"{Gender=0,AppointmentDay=20,Alcoholism=0} => {SMS_received=0}",0.0645006517960603,1,1.47236254581806,7125
+"{Gender=0,AppointmentDay=20,Handcap=0} => {SMS_received=0}",0.0665646726535342,1,1.47236254581806,7353
+"{Gender=1,AppointmentDay=20,Hipertension=0} => {SMS_received=0}",0.0995980590961761,1,1.47236254581806,11002
+"{Gender=1,AppointmentDay=20,Scholarship=0} => {SMS_received=0}",0.110859646581692,1,1.47236254581806,12246
+"{Gender=1,AppointmentDay=20,Diabetes=0} => {SMS_received=0}",0.116291280417149,1,1.47236254581806,12846
+"{Gender=1,AppointmentDay=20,Alcoholism=0} => {SMS_received=0}",0.12379598783314,1,1.47236254581806,13675
+"{Gender=1,AppointmentDay=20,Handcap=0} => {SMS_received=0}",0.12359682792584,1,1.47236254581806,13653
+"{AppointmentDay=20,Scholarship=0,Hipertension=0} => {SMS_received=0}",0.142173015643105,1,1.47236254581806,15705
+"{AppointmentDay=20,Hipertension=0,Diabetes=0} => {SMS_received=0}",0.15494640787949,1,1.47236254581806,17116
+"{AppointmentDay=20,Hipertension=0,Alcoholism=0} => {SMS_received=0}",0.154113557358053,1,1.47236254581806,17024
+"{AppointmentDay=20,Hipertension=0,Handcap=0} => {SMS_received=0}",0.155217989571263,1,1.47236254581806,17146
+"{AppointmentDay=20,Scholarship=0,Diabetes=0} => {SMS_received=0}",0.163347334878331,1,1.47236254581806,18044
+"{AppointmentDay=20,Scholarship=0,Alcoholism=0} => {SMS_received=0}",0.170743409617613,1,1.47236254581806,18861
+"{AppointmentDay=20,Scholarship=0,Handcap=0} => {SMS_received=0}",0.171983632676709,1,1.47236254581806,18998
+"{AppointmentDay=20,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.17557756373117,1,1.47236254581806,19395
+"{AppointmentDay=20,Diabetes=0,Handcap=0} => {SMS_received=0}",0.177415266512167,1,1.47236254581806,19598
+"{AppointmentDay=20,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.184403968713789,1,1.47236254581806,20370
+"{Gender=1,ScheduledDay=20,AppointmentDay=20,Scholarship=0} => {SMS_received=0}",0.0504598783314021,1,1.47236254581806,5574
+"{Gender=1,ScheduledDay=20,AppointmentDay=20,Diabetes=0} => {SMS_received=0}",0.0526868482039397,1,1.47236254581806,5820
+"{Gender=1,ScheduledDay=20,AppointmentDay=20,Alcoholism=0} => {SMS_received=0}",0.0563984646581692,1,1.47236254581806,6230
+"{Gender=1,ScheduledDay=20,AppointmentDay=20,Handcap=0} => {SMS_received=0}",0.0561540411355736,1,1.47236254581806,6203
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Hipertension=0} => {SMS_received=0}",0.0673069959443801,1,1.47236254581806,7435
+"{ScheduledDay=20,AppointmentDay=20,Hipertension=0,Diabetes=0} => {SMS_received=0}",0.0734356894553882,1,1.47236254581806,8112
+"{ScheduledDay=20,AppointmentDay=20,Hipertension=0,Alcoholism=0} => {SMS_received=0}",0.0725485225955968,1,1.47236254581806,8014
+"{ScheduledDay=20,AppointmentDay=20,Hipertension=0,Handcap=0} => {SMS_received=0}",0.0732184241019699,1,1.47236254581806,8088
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Diabetes=0} => {SMS_received=0}",0.0769571987253766,1,1.47236254581806,8501
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Alcoholism=0} => {SMS_received=0}",0.0806144988412515,1,1.47236254581806,8905
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Handcap=0} => {SMS_received=0}",0.0811214513325608,1,1.47236254581806,8961
+"{ScheduledDay=20,AppointmentDay=20,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0823435689455388,1,1.47236254581806,9096
+"{ScheduledDay=20,AppointmentDay=20,Diabetes=0,Handcap=0} => {SMS_received=0}",0.0832941048667439,1,1.47236254581806,9201
+"{ScheduledDay=20,AppointmentDay=20,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0865349797219003,1,1.47236254581806,9559
+"{AppointmentDay=20,Age=[ 0, 19),Hipertension=0,Diabetes=0} => {SMS_received=0}",0.0519807358053302,1,1.47236254581806,5742
+"{AppointmentDay=20,Age=[ 0, 19),Hipertension=0,Alcoholism=0} => {SMS_received=0}",0.052053157589803,1,1.47236254581806,5750
+"{AppointmentDay=20,Age=[ 0, 19),Hipertension=0,Handcap=0} => {SMS_received=0}",0.0515099942062572,1,1.47236254581806,5690
+"{AppointmentDay=20,Age=[ 0, 19),Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0519988412514484,1,1.47236254581806,5744
+"{AppointmentDay=20,Age=[ 0, 19),Diabetes=0,Handcap=0} => {SMS_received=0}",0.0514556778679027,1,1.47236254581806,5684
+"{AppointmentDay=20,Age=[ 0, 19),Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0515280996523754,1,1.47236254581806,5692
+"{ScheduledDay=[18,20),AppointmentDay=20,Scholarship=0,Diabetes=0} => {SMS_received=0}",0.050170191193511,1,1.47236254581806,5542
+"{ScheduledDay=[18,20),AppointmentDay=20,Scholarship=0,Alcoholism=0} => {SMS_received=0}",0.0527411645422943,1,1.47236254581806,5826
+"{ScheduledDay=[18,20),AppointmentDay=20,Scholarship=0,Handcap=0} => {SMS_received=0}",0.0533567497103129,1,1.47236254581806,5894
+"{ScheduledDay=[18,20),AppointmentDay=20,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0542982329084589,1,1.47236254581806,5998
+"{ScheduledDay=[18,20),AppointmentDay=20,Diabetes=0,Handcap=0} => {SMS_received=0}",0.0550496089223638,1,1.47236254581806,6081
+"{ScheduledDay=[18,20),AppointmentDay=20,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0576296349942063,1,1.47236254581806,6366
+"{Gender=0,AppointmentDay=20,Scholarship=0,Hipertension=0} => {SMS_received=0}",0.0548685544611819,1,1.47236254581806,6061
+"{Gender=0,AppointmentDay=20,Hipertension=0,Diabetes=0} => {SMS_received=0}",0.0570774188876014,1,1.47236254581806,6305
+"{Gender=0,AppointmentDay=20,Hipertension=0,Alcoholism=0} => {SMS_received=0}",0.0558915121668598,1,1.47236254581806,6174
+"{Gender=0,AppointmentDay=20,Hipertension=0,Handcap=0} => {SMS_received=0}",0.0569325753186559,1,1.47236254581806,6289
+"{Gender=0,AppointmentDay=20,Scholarship=0,Diabetes=0} => {SMS_received=0}",0.0612507242178447,1,1.47236254581806,6766
+"{Gender=0,AppointmentDay=20,Scholarship=0,Alcoholism=0} => {SMS_received=0}",0.0612507242178447,1,1.47236254581806,6766
+"{Gender=0,AppointmentDay=20,Scholarship=0,Handcap=0} => {SMS_received=0}",0.0633056923522596,1,1.47236254581806,6993
+"{Gender=0,AppointmentDay=20,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0612054606025492,1,1.47236254581806,6761
+"{Gender=0,AppointmentDay=20,Diabetes=0,Handcap=0} => {SMS_received=0}",0.0630250579374276,1,1.47236254581806,6962
+"{Gender=0,AppointmentDay=20,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0629345307068366,1,1.47236254581806,6952
+"{Gender=1,AppointmentDay=20,Scholarship=0,Hipertension=0} => {SMS_received=0}",0.0873044611819235,1,1.47236254581806,9644
+"{Gender=1,AppointmentDay=20,Hipertension=0,Diabetes=0} => {SMS_received=0}",0.0978689889918888,1,1.47236254581806,10811
+"{Gender=1,AppointmentDay=20,Hipertension=0,Alcoholism=0} => {SMS_received=0}",0.0982220451911935,1,1.47236254581806,10850
+"{Gender=1,AppointmentDay=20,Hipertension=0,Handcap=0} => {SMS_received=0}",0.0982854142526072,1,1.47236254581806,10857
+"{Gender=1,AppointmentDay=20,Scholarship=0,Diabetes=0} => {SMS_received=0}",0.102096610660487,1,1.47236254581806,11278
+"{Gender=1,AppointmentDay=20,Scholarship=0,Alcoholism=0} => {SMS_received=0}",0.109492685399768,1,1.47236254581806,12095
+"{Gender=1,AppointmentDay=20,Scholarship=0,Handcap=0} => {SMS_received=0}",0.10867794032445,1,1.47236254581806,12005
+"{Gender=1,AppointmentDay=20,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.114372103128621,1,1.47236254581806,12634
+"{Gender=1,AppointmentDay=20,Diabetes=0,Handcap=0} => {SMS_received=0}",0.114390208574739,1,1.47236254581806,12636
+"{Gender=1,AppointmentDay=20,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.121469438006952,1,1.47236254581806,13418
+"{AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0} => {SMS_received=0}",0.139855518539977,1,1.47236254581806,15449
+"{AppointmentDay=20,Scholarship=0,Hipertension=0,Alcoholism=0} => {SMS_received=0}",0.139267091541136,1,1.47236254581806,15384
+"{AppointmentDay=20,Scholarship=0,Hipertension=0,Handcap=0} => {SMS_received=0}",0.140018467555041,1,1.47236254581806,15467
+"{AppointmentDay=20,Hipertension=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.151615005793743,1,1.47236254581806,16748
+"{AppointmentDay=20,Hipertension=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.152610805330243,1,1.47236254581806,16858
+"{AppointmentDay=20,Hipertension=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.151777954808806,1,1.47236254581806,16766
+"{AppointmentDay=20,Scholarship=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.158974869640788,1,1.47236254581806,17561
+"{AppointmentDay=20,Scholarship=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.160242250869061,1,1.47236254581806,17701
+"{AppointmentDay=20,Scholarship=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.167113267670915,1,1.47236254581806,18460
+"{AppointmentDay=20,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.1722733198146,1,1.47236254581806,19030
+"{Gender=1,ScheduledDay=20,AppointmentDay=20,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0516367323290846,1,1.47236254581806,5704
+"{Gender=1,ScheduledDay=20,AppointmentDay=20,Diabetes=0,Handcap=0} => {SMS_received=0}",0.0515733632676709,1,1.47236254581806,5697
+"{Gender=1,ScheduledDay=20,AppointmentDay=20,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0550043453070684,1,1.47236254581806,6076
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0} => {SMS_received=0}",0.0662206691772885,1,1.47236254581806,7315
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Hipertension=0,Alcoholism=0} => {SMS_received=0}",0.0655417149478563,1,1.47236254581806,7240
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Hipertension=0,Handcap=0} => {SMS_received=0}",0.0660034038238702,1,1.47236254581806,7291
+"{ScheduledDay=20,AppointmentDay=20,Hipertension=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0714078794901506,1,1.47236254581806,7888
+"{ScheduledDay=20,AppointmentDay=20,Hipertension=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.072005359212051,1,1.47236254581806,7954
+"{ScheduledDay=20,AppointmentDay=20,Hipertension=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0711272450753187,1,1.47236254581806,7857
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0745220162224797,1,1.47236254581806,8232
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.0751376013904983,1,1.47236254581806,8300
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0784418453070684,1,1.47236254581806,8665
+"{ScheduledDay=20,AppointmentDay=20,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0803972334878331,1,1.47236254581806,8881
+"{AppointmentDay=20,Age=[ 0, 19),Hipertension=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0519445249130939,1,1.47236254581806,5738
+"{AppointmentDay=20,Age=[ 0, 19),Hipertension=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.0514013615295481,1,1.47236254581806,5678
+"{AppointmentDay=20,Age=[ 0, 19),Hipertension=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0514737833140209,1,1.47236254581806,5686
+"{AppointmentDay=20,Age=[ 0, 19),Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0514194669756663,1,1.47236254581806,5680
+"{ScheduledDay=[18,20),AppointmentDay=20,Scholarship=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0518268395133256,1,1.47236254581806,5725
+"{ScheduledDay=[18,20),AppointmentDay=20,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0535015932792584,1,1.47236254581806,5910
+"{Gender=0,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0} => {SMS_received=0}",0.0539632821552723,1,1.47236254581806,5961
+"{Gender=0,AppointmentDay=20,Scholarship=0,Hipertension=0,Alcoholism=0} => {SMS_received=0}",0.0528226390498262,1,1.47236254581806,5835
+"{Gender=0,AppointmentDay=20,Scholarship=0,Hipertension=0,Handcap=0} => {SMS_received=0}",0.0538546494785632,1,1.47236254581806,5949
+"{Gender=0,AppointmentDay=20,Hipertension=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0550586616454229,1,1.47236254581806,6082
+"{Gender=0,AppointmentDay=20,Hipertension=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.0560001448435689,1,1.47236254581806,6186
+"{Gender=0,AppointmentDay=20,Hipertension=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0548323435689455,1,1.47236254581806,6057
+"{Gender=0,AppointmentDay=20,Scholarship=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0580641657010429,1,1.47236254581806,6414
+"{Gender=0,AppointmentDay=20,Scholarship=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.0598747103128621,1,1.47236254581806,6614
+"{Gender=0,AppointmentDay=20,Scholarship=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.059766077636153,1,1.47236254581806,6602
+"{Gender=0,AppointmentDay=20,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.059766077636153,1,1.47236254581806,6602
+"{Gender=1,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0} => {SMS_received=0}",0.0858922363847045,1,1.47236254581806,9488
+"{Gender=1,AppointmentDay=20,Scholarship=0,Hipertension=0,Alcoholism=0} => {SMS_received=0}",0.0864444524913094,1,1.47236254581806,9549
+"{Gender=1,AppointmentDay=20,Scholarship=0,Hipertension=0,Handcap=0} => {SMS_received=0}",0.0861638180764774,1,1.47236254581806,9518
+"{Gender=1,AppointmentDay=20,Hipertension=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0965563441483198,1,1.47236254581806,10666
+"{Gender=1,AppointmentDay=20,Hipertension=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.0966106604866744,1,1.47236254581806,10672
+"{Gender=1,AppointmentDay=20,Hipertension=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.096945611239861,1,1.47236254581806,10709
+"{Gender=1,AppointmentDay=20,Scholarship=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.100910703939745,1,1.47236254581806,11147
+"{Gender=1,AppointmentDay=20,Scholarship=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.100367540556199,1,1.47236254581806,11087
+"{Gender=1,AppointmentDay=20,Scholarship=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.107347190034762,1,1.47236254581806,11858
+"{Gender=1,AppointmentDay=20,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.112507242178447,1,1.47236254581806,12428
+"{AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.137067279837775,1,1.47236254581806,15141
+"{AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.137764339513326,1,1.47236254581806,15218
+"{AppointmentDay=20,Scholarship=0,Hipertension=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.137166859791425,1,1.47236254581806,15152
+"{AppointmentDay=20,Hipertension=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.149333719582851,1,1.47236254581806,16496
+"{AppointmentDay=20,Scholarship=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.155915049246813,1,1.47236254581806,17223
+"{Gender=1,ScheduledDay=20,AppointmentDay=20,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.050550405561993,1,1.47236254581806,5584
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0645097045191193,1,1.47236254581806,7126
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.0649532879490151,1,1.47236254581806,7175
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Hipertension=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0642833864426419,1,1.47236254581806,7101
+"{ScheduledDay=20,AppointmentDay=20,Hipertension=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0700137601390498,1,1.47236254581806,7734
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0727386297798378,1,1.47236254581806,8035
+"{AppointmentDay=20,Age=[ 0, 19),Hipertension=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0513651506373117,1,1.47236254581806,5674
+"{Gender=0,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0520259994206257,1,1.47236254581806,5747
+"{Gender=0,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.0529584298957126,1,1.47236254581806,5850
+"{Gender=0,AppointmentDay=20,Scholarship=0,Hipertension=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0518358922363847,1,1.47236254581806,5726
+"{Gender=0,AppointmentDay=20,Hipertension=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0539994930475087,1,1.47236254581806,5965
+"{Gender=0,AppointmentDay=20,Scholarship=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0567062572421784,1,1.47236254581806,6264
+"{Gender=1,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.0850412804171495,1,1.47236254581806,9394
+"{Gender=1,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.084805909617613,1,1.47236254581806,9368
+"{Gender=1,AppointmentDay=20,Scholarship=0,Hipertension=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0853309675550406,1,1.47236254581806,9426
+"{Gender=1,AppointmentDay=20,Hipertension=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0953342265353418,1,1.47236254581806,10531
+"{Gender=1,AppointmentDay=20,Scholarship=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.099208792004635,1,1.47236254581806,10959
+"{AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.135021364426419,1,1.47236254581806,14915
+"{ScheduledDay=20,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0632785341830823,1,1.47236254581806,6990
+"{Gender=0,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0510392526071842,1,1.47236254581806,5638
+"{Gender=1,AppointmentDay=20,Scholarship=0,Hipertension=0,Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.0839821118192352,1,1.47236254581806,9277

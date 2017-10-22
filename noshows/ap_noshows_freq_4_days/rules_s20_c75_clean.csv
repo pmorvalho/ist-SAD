@@ -1,0 +1,16 @@
+"rules","support","confidence","lift","count"
+"{AppointmentDay=[11,20)} => {SMS_received=0}",0.245699956546929,0.889839677387627,1.31016661276837,27141
+"{AppointmentDay=[11,20),Scholarship=0} => {SMS_received=0}",0.222072349362688,0.890126637396132,1.31058912193704,24531
+"{AppointmentDay=[11,20),Diabetes=0} => {SMS_received=0}",0.228101462920046,0.888062594720333,1.30755010280822,25197
+"{AppointmentDay=[11,20),Alcoholism=0} => {SMS_received=0}",0.238448725376593,0.889233989399413,1.30927482046007,26340
+"{AppointmentDay=[11,20),Handcap=0} => {SMS_received=0}",0.240322639049826,0.888691751472951,1.30847644964623,26547
+"{AppointmentDay=[11,20),Scholarship=0,Diabetes=0} => {SMS_received=0}",0.205795553302433,0.888424261372518,1.30808260724097,22733
+"{AppointmentDay=[11,20),Scholarship=0,Alcoholism=0} => {SMS_received=0}",0.216016077636153,0.889576498657918,1.30977911826389,23862
+"{AppointmentDay=[11,20),Scholarship=0,Handcap=0} => {SMS_received=0}",0.217102404403244,0.888979501056456,1.30890012135555,23982
+"{AppointmentDay=[11,20),Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.221583502317497,0.887426582553839,1.30661366231559,24477
+"{AppointmentDay=[11,20),Diabetes=0,Handcap=0} => {SMS_received=0}",0.22365657589803,0.886982121059812,1.30595925385873,24706
+"{AppointmentDay=[11,20),Alcoholism=0,Handcap=0} => {SMS_received=0}",0.233198146002318,0.888092118871957,1.30759357306327,25760
+"{AppointmentDay=[11,20),Scholarship=0,Diabetes=0,Alcoholism=0} => {SMS_received=0}",0.200382024913094,0.88785046728972,1.30723777432445,22135
+"{AppointmentDay=[11,20),Scholarship=0,Diabetes=0,Handcap=0} => {SMS_received=0}",0.201730880648899,0.887349181698722,1.3064997001955,22284
+"{AppointmentDay=[11,20),Scholarship=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.211154765353418,0.888436047840329,1.30809996119472,23325
+"{AppointmentDay=[11,20),Diabetes=0,Alcoholism=0,Handcap=0} => {SMS_received=0}",0.217229142526072,0.886344328297566,1.3050201916836,23996

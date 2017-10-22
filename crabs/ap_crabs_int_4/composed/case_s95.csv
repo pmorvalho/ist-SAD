@@ -8,7 +8,10 @@ Rules with supp=95 and conf=75
 =======================================
 Rules with supp=95 and conf=85
 =======================================
+""
 
+[1] support    confidence lift       leverage   jaccard   
+<0 rows> (or 0-length row.names)
 =======================================
 Rules with supp=95 and conf=95
 =======================================
