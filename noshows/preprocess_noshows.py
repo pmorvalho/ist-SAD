@@ -30,10 +30,10 @@ for d in dic:
  	dataset['Neighbourhood'] = dataset['Neighbourhood'].replace(d,dic[d])
 
 dataset.AppointmentDay = pd.to_datetime(pd.Series(dataset.AppointmentDay))
-dataset.AppointmentDay = dataset.AppointmentDay.dt.day
+dataset.AppointmentDay = dataset.AppointmentDay.dt.week
 
 dataset.ScheduledDay = pd.to_datetime(pd.Series(dataset.ScheduledDay))
-dataset.ScheduledDay = dataset.ScheduledDay.dt.day
+dataset.ScheduledDay = dataset.ScheduledDay.dt.week
 
 
 # print "Ja tratou das Localidades"
@@ -41,10 +41,12 @@ dataset.ScheduledDay = dataset.ScheduledDay.dt.day
 #  drop PatientId,AppointmentID
 
 # ficheiro base com tudo em numeros
-dataset.to_csv("data/base_noshows.csv", index=False)
+# dataset.to_csv("data/base_noshows.csv", index=False)
 
 # dataset.drop('PatientId',1,inplace=True)
 dataset.drop('AppointmentID',1,inplace=True)
+
+dataset.to_csv("data/base_noshows.csv", index=False)
 
 dataset.to_csv("data/base_kmeans_noshows.csv", index=False)
 

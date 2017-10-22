@@ -33,13 +33,13 @@ apriori_all = function(dataset, folder) {
 			print(c(s,"__",c))
 			rules <- apriori(dataset, parameter=list(supp=s_i,conf=c_i,target="rules"))
 
-			if (length(rules) != 0){
-				plot(rules, measure=c("support", "confidence"), shading="lift")
-				plot(rules, method="graph", control=list(type="itemsets"))
+			# if (length(rules) != 0){
+			# 	plot(rules, measure=c("support", "confidence"), shading="lift")
+			# 	plot(rules, method="graph", control=list(type="itemsets"))
 
-				subrules2 <- head(sort(rules, by="support"), 50)
-				plot(subrules2, method="graph", control=list(type="itemsets"))			
-			}
+			# 	subrules2 <- head(sort(rules, by="support"), 50)
+			# 	plot(subrules2, method="graph", control=list(type="itemsets"))			
+			# }
 
 			# summary <- summary(rules)
 			# write(summary, file=paste(c("ap_noshows/summary_s",s,"_c",c,".csv"), collapse=""))
@@ -68,13 +68,11 @@ noshows_d_fr <- read_csv("data/base_noshows.csv") #_noAppointmentID.csv")
 noshows_d_fr = discretize_all(noshows_d_fr, "frequency", 4)
 
 noshows_d_int <- read_csv("data/base_noshows.csv") #_noAppointmentID.csv")
-noshows_d_int = discretize_all(noshows_d_int, "interval", 3)
+noshows_d_int = discretize_all(noshows_d_int, "interval", 4)
 
+apriori_all(noshows_base,"ap_noshows")
 
-
-apriori_all(noshows_base,"ap_noshows") #_noAppointmentID")
-
-# apriori_all(noshows_d_fr,"ap_noshows_freq")
+apriori_all(noshows_d_fr,"ap_noshows_freq_4")
 
 # apriori_all(noshows_fact,"ap_noshows_trunc")
 
