@@ -45,6 +45,7 @@ dataset.ScheduledDay = dataset.ScheduledDay.dt.week
 
 # dataset.drop('PatientId',1,inplace=True)
 dataset.drop('AppointmentID',1,inplace=True)
+dataset.drop('Neighbourhood',1,inplace=True)
 
 dataset.to_csv("data/base_noshows.csv", index=False)
 
