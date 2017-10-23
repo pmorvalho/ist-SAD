@@ -2,10 +2,19 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 library(clv)
+library(caret)
 
 kmeans_wrapper = function(dataset, folder, centroids){
+
+	# pp <- preProcess(dataset, method=c("pca"))
+	# pp <- predict(pp, dataset)
+	# diss <- as.matrix(dist(pp))
+	# crabs_clust <- kmeans(pp, centroids)
+	# cls.scatt <- cls.scatt.data(pp, crabs_clust$cluster, dist="manhattan")
+
 	crabs_clust <- kmeans(dataset, centroids)
 	cls.scatt <- cls.scatt.data(dataset, crabs_clust$cluster, dist="manhattan")
+
 
 	dunn <- clv.Dunn(cls.scatt, intraclust, interclust)
 	dunn <- capture.output(dunn)
@@ -53,8 +62,8 @@ kmeans_wrapper = function(dataset, folder, centroids){
 }
 
 args <- commandArgs(trailingOnly = TRUE)
-intraclust = c("complete","average","centroid")
-interclust = c("single", "complete", "average","centroid", "aveToCent", "hausdorff")
+intraclust = c("centroid")
+interclust = c("centroid")
 crabs_fact <- read_csv("data/base_crabs.csv")
 diss <- as.matrix(dist(crabs_fact))
 
