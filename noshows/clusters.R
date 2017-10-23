@@ -2,16 +2,29 @@ library(readr)
 library(dplyr)
 library(ggplot2)
 library(clv)
+library(caret)
 
 kmeans_wrapper = function(dataset, folder){
 	noshows_fact <- read_csv(dataset)
-	diss <- as.matrix(dist(noshows_fact))
 
-	for (centroids in seq(2, 10, by=1)) {
+	# trick to force matrix to have a double attribute so cls.scatt works. hack! 
+	noshows_fact[,1] <- sapply(noshows_fact[,1], as.double)
+
+	diss <- as.matrix(dist(noshows_fact))
+	# pp <- preProcess(noshows_fact, method=c("pca"))
+	# pp <- predict(pp, noshows_fact)
+
+	# diss <- as.matrix(dist(pp))
+
+
+	for (centroids in seq(2, 9, by=1)) {
 		print(c("with ",centroids, " centroids..."))
+		# noshows_clust <- kmeans(pp, centroids)
 		noshows_clust <- kmeans(noshows_fact, centroids)
 
+		# cls.scatt <- cls.scatt.data(pp, noshows_clust$cluster, dist="manhattan")
 		cls.scatt <- cls.scatt.data(noshows_fact, noshows_clust$cluster, dist="manhattan")
+
 
 		dunn <- clv.Dunn(cls.scatt, intraclust, interclust)
 		dunn <- capture.output(dunn)
@@ -20,7 +33,7 @@ kmeans_wrapper = function(dataset, folder){
 		davies <- capture.output(davies)
 
 		# silhouette <- mean(silhouette(noshows_clust$cluster, dmatrix=diss^2)[,3])
-		silhouette <- mean(silhouette(noshows_clust$cluster, dmatrix=diss)[,3])
+		silhouette <- mean(silhouette(noshows_clust$cluster, dmatrix=diss^2)[,3])
 		silhouette <- capture.output(silhouette)
 
 		# general stats file
@@ -55,8 +68,12 @@ kmeans_wrapper = function(dataset, folder){
 }
 
 args <- commandArgs(trailingOnly = TRUE)
-intraclust = c("complete","average","centroid")
-interclust = c("single", "complete", "average","centroid", "aveToCent", "hausdorff")
+intraclust = c("centroid")
+interclust = c("centroid")
+
+# intraclust = c("complete","average","centroid")
+
+# interclust = c("single", "complete", "average","centroid", "aveToCent", "hausdorff")
 
 if (length(args) == 2) {
 	kmeans_wrapper(args[1], args[2])	
