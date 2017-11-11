@@ -7,9 +7,9 @@ dataset['sex'] = dataset['sex'].replace('M',0)
 dataset['sex'] = dataset['sex'].replace('F',1)
 
 
+dataset['sp'] = dataset['sp'].replace('B', 0)
+dataset['sp'] = dataset['sp'].replace('O', 1)
 dataset.rename(columns={'sp':'class'},inplace=True)
-# dataset['sp'] = dataset['sp'].replace('B', 0)
-# dataset['sp'] = dataset['sp'].replace('O', 1)
 
 dataset.to_csv("data/base_crabs.csv", index=False)
 
