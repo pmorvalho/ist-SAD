@@ -7,6 +7,7 @@ from sklearn.model_selection import cross_val_score
 import pandas as pd
 import numpy as np
 import graphviz 
+import os
 
 data = pd.read_csv("data/base_crabs.csv")
 X = np.array(data.drop("class",axis=1))
@@ -16,16 +17,11 @@ feature_names = np.array(["sex","index","FL","RW","CL", "CW", "BD"])
 # split dataset into training/test portions
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=0)
 
-# PCA part
-pca = PCA(n_components=3).fit(X)
-X_pca = pca.transform(X)
 
-pca = PCA(n_components=3).fit(X_train)
-X_train_pca = pca.transform(X_train)
-X_test_pca = pca.transform(X_test)
+def decisionTree(X, X_train, y_train, X_test, y_test, min_sample):
+	
+	clf = DecisionTreeClassifier(min_samples_leaf=min_sample)
 
-def decisionTree(X, X_train, y_train, X_test, y_test, f, wpca):
-	clf = DecisionTreeClassifier()
 	clf = clf.fit(X_train,y_train)
 	y_pred = clf.predict(X_test)
 	print("\nDecision Tree Calssififer:")
@@ -33,23 +29,19 @@ def decisionTree(X, X_train, y_train, X_test, y_test, f, wpca):
 	print(confusion_matrix(y_test,y_pred, labels=range(2)))
 	print("Accuracy score: %f" % (accuracy_score(y_test,y_pred)))
 	print("ROC auc score: %f" % (roc_auc_score(y_test,y_pred)))
-	if wpca == "-non_pca":
-		dot_data = export_graphviz(clf, out_file=None,
-							 feature_names=f,
-	                         class_names=target_names,  
-	                         filled=True, rounded=True,  
-	                         special_characters=True)  
-		graph = graphviz.Source(dot_data)  
-		graph.render("crabs"+wpca)
+	graph = graphviz.Source(export_graphviz(clf, out_file=None,
+						 feature_names=feature_names,
+                         class_names=target_names,  
+                         filled=True, rounded=True,  
+                         special_characters=True))  
+	graph.render("crabs-dt-"+str(min_sample)+"samples_leaf")
 	clf = DecisionTreeClassifier()
 	clf.fit(X,y)
 	print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
-	
-print("\n================= Non-PCA executions ========================")
-decisionTree(X, X_train, y_train, X_test, y_test, feature_names, "-non_pca")
-print("===============================================================")
+	os.system("rm crabs-dt-"+str(min_sample)+"samples_leaf")
 
-print("\n================= With-PCA executions =======================")
-decisionTree(X_pca, X_train_pca,y_train,X_test_pca,y_test, feature_names, "-pca")
-print("===============================================================")
+for i in range(1,6):
+	print("\n================= Min Samples Leaf : "+str(i)+" ========================")	
+	decisionTree(X, X_train, y_train, X_test, y_test, i)
+	print("\n==============================================================")	
 
