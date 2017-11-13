@@ -37,11 +37,11 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample):
                          class_names=target_names,  
                          filled=True, rounded=True,  
                          special_characters=True))  
-	graph.render("crabs-dt-"+str(min_sample)+"samples_leaf")
+	graph.render("decision-trees-examples/crabs-dt-"+str(min_sample)+"samples_leaf")
 	clf = DecisionTreeClassifier()
 	clf.fit(X,y)
 	print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
-	os.system("rm crabs-dt-"+str(min_sample)+"samples_leaf")
+	os.system("rm decision-trees-examples/crabs-dt-"+str(min_sample)+"samples_leaf")
 
 for i in range(1,6):
 	print("\n================= Min Samples Leaf : "+str(i)+" ========================")	
