@@ -43,7 +43,7 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample):
 	print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
 	# os.system("rm decision-trees-examples/noshows-dt-"+str(min_sample)+"samples_leaf")
 
-for i in range(1,6):
+for i in range(1,2001,100):
 	print("\n================= Min Samples Leaf : "+str(i)+" ========================")	
 	decisionTree(X, X_train, y_train, X_test, y_test, i)
 	print("\n==============================================================")	

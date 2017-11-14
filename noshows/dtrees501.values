@@ -1,0 +1,180 @@
+
+================= Min Samples Leaf : 1 ========================
+
+Decision Tree Calssififer:
+             precision    recall  f1-score   support
+
+        Yes       0.83      0.83      0.83     26545
+         No       0.30      0.30      0.30      6614
+
+avg / total       0.72      0.72      0.72     33159
+
+[[21920  4625]
+ [ 4597  2017]]
+Accuracy score: 0.721885
+ROC auc score: 0.565363
+Cross-Validation (10-fold) score: 0.707547
+
+==============================================================
+
+================= Min Samples Leaf : 51 ========================
+
+Decision Tree Calssififer:
+             precision    recall  f1-score   support
+
+        Yes       0.88      0.62      0.72     26545
+         No       0.30      0.65      0.41      6614
+
+avg / total       0.76      0.62      0.66     33159
+
+[[16351 10194]
+ [ 2332  4282]]
+Accuracy score: 0.622244
+ROC auc score: 0.631694
+Cross-Validation (10-fold) score: 0.707755
+
+==============================================================
+
+================= Min Samples Leaf : 101 ========================
+
+Decision Tree Calssififer:
+             precision    recall  f1-score   support
+
+        Yes       0.89      0.59      0.71     26545
+         No       0.30      0.70      0.42      6614
+
+avg / total       0.77      0.61      0.65     33159
+
+[[15723 10822]
+ [ 1996  4618]]
+Accuracy score: 0.613438
+ROC auc score: 0.645265
+Cross-Validation (10-fold) score: 0.707628
+
+==============================================================
+
+================= Min Samples Leaf : 151 ========================
+
+Decision Tree Calssififer:
+             precision    recall  f1-score   support
+
+        Yes       0.89      0.58      0.71     26545
+         No       0.30      0.71      0.42      6614
+
+avg / total       0.77      0.61      0.65     33159
+
+[[15514 11031]
+ [ 1904  4710]]
+Accuracy score: 0.609910
+ROC auc score: 0.648284
+Cross-Validation (10-fold) score: 0.707556
+
+==============================================================
+
+================= Min Samples Leaf : 201 ========================
+
+Decision Tree Calssififer:
+             precision    recall  f1-score   support
+
+        Yes       0.89      0.58      0.71     26545
+         No       0.30      0.72      0.42      6614
+
+avg / total       0.78      0.61      0.65     33159
+
+[[15513 11032]
+ [ 1853  4761]]
+Accuracy score: 0.611418
+ROC auc score: 0.652120
+Cross-Validation (10-fold) score: 0.707493
+
+==============================================================
+
+================= Min Samples Leaf : 251 ========================
+
+Decision Tree Calssififer:
+             precision    recall  f1-score   support
+
+        Yes       0.89      0.59      0.71     26545
+         No       0.30      0.72      0.43      6614
+
+avg / total       0.78      0.61      0.65     33159
+
+[[15632 10913]
+ [ 1875  4739]]
+Accuracy score: 0.614343
+ROC auc score: 0.652699
+Cross-Validation (10-fold) score: 0.706733
+
+==============================================================
+
+================= Min Samples Leaf : 301 ========================
+
+Decision Tree Calssififer:
+             precision    recall  f1-score   support
+
+        Yes       0.89      0.60      0.71     26545
+         No       0.30      0.71      0.43      6614
+
+avg / total       0.77      0.62      0.66     33159
+
+[[15807 10738]
+ [ 1912  4702]]
+Accuracy score: 0.618505
+ROC auc score: 0.653198
+Cross-Validation (10-fold) score: 0.706859
+
+==============================================================
+
+================= Min Samples Leaf : 351 ========================
+
+Decision Tree Calssififer:
+             precision    recall  f1-score   support
+
+        Yes       0.89      0.60      0.72     26545
+         No       0.31      0.70      0.43      6614
+
+avg / total       0.77      0.62      0.66     33159
+
+[[15973 10572]
+ [ 1957  4657]]
+Accuracy score: 0.622154
+ROC auc score: 0.652923
+Cross-Validation (10-fold) score: 0.707375
+
+==============================================================
+
+================= Min Samples Leaf : 401 ========================
+
+Decision Tree Calssififer:
+             precision    recall  f1-score   support
+
+        Yes       0.89      0.61      0.72     26545
+         No       0.31      0.70      0.43      6614
+
+avg / total       0.77      0.63      0.66     33159
+
+[[16164 10381]
+ [ 2006  4608]]
+Accuracy score: 0.626436
+ROC auc score: 0.652816
+Cross-Validation (10-fold) score: 0.707502
+
+==============================================================
+
+================= Min Samples Leaf : 451 ========================
+
+Decision Tree Calssififer:
+             precision    recall  f1-score   support
+
+        Yes       0.89      0.60      0.71     26545
+         No       0.30      0.71      0.42      6614
+
+avg / total       0.77      0.62      0.66     33159
+
+[[15818 10727]
+ [ 1942  4672]]
+Accuracy score: 0.617932
+ROC auc score: 0.651137
+Cross-Validation (10-fold) score: 0.707312
+
+==============================================================

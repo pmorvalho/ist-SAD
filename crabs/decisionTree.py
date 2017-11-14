@@ -16,8 +16,9 @@ data = pd.read_csv("data/base_crabs.csv")
 X = np.array(data.drop("class",axis=1))
 y = np.array(data["class"])
 target_names = np.array(["B","O"])
-feature_names = np.array(["sex","index","FL","RW","CL", "CW", "BD"])
+# feature_names = np.array(["sex","index","FL","RW","CL", "CW", "BD"])
 # split dataset into training/test portions
+feature_names = np.array(["FL","RW","CL", "CW", "BD"])
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=0)
 
 
@@ -43,14 +44,14 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample):
 	print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
 	os.system("rm decision-trees-examples/crabs-dt-"+str(min_sample)+"samples_leaf")
 
-for i in range(1,6):
+for i in range(1,10):
 	print("\n================= Min Samples Leaf : "+str(i)+" ========================")	
 	decisionTree(X, X_train, y_train, X_test, y_test, i)
 	print("\n==============================================================")	
 
 
 clf = DecisionTreeClassifier()
-train_sizes,train_scores, test_scores = learning_curve(
+train_sizes, train_scores, test_scores = learning_curve(
     clf, X, y, cv=10, n_jobs=1)
 train_scores_mean = np.mean(train_scores, axis=1)
 train_scores_std = np.std(train_scores, axis=1)
