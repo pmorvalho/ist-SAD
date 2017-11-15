@@ -21,9 +21,9 @@ feature_names = np.array(["PatientId", "AppointmentID", "Gender", "ScheduledDay"
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=0)
 
 
-def decisionTree(X, X_train, y_train, X_test, y_test, min_sample):
+def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sample_node):
 	
-	clf = DecisionTreeClassifier(min_samples_leaf=min_sample, class_weight='balanced')
+	clf = DecisionTreeClassifier(min_samples_leaf=min_sample_leaf, min_samples_split=min_sample_node,class_weight='balanced')
 
 	clf = clf.fit(X_train,y_train)
 	y_pred = clf.predict(X_test)
@@ -43,10 +43,33 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample):
 	print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
 	# os.system("rm decision-trees-examples/noshows-dt-"+str(min_sample)+"samples_leaf")
 
+print("\n=================================== Min Samples Leaf : "+str(i)+" ==========================================")	
+print("\n==================================================================================================")	
+
 for i in range(1,2001,100):
 	print("\n================= Min Samples Leaf : "+str(i)+" ========================")	
-	decisionTree(X, X_train, y_train, X_test, y_test, i)
+	decisionTree(X, X_train, y_train, X_test, y_test, i, 1)
 	print("\n==============================================================")	
+
+print("\n=================================== Min Samples Node : "+str(i)+" ==========================================")	
+print("\n==================================================================================================")	
+
+for i in range(1,2001,100):
+	print("\n================= Min Samples Leaf : "+str(i)+" ========================")	
+	decisionTree(X, X_train, y_train, X_test, y_test, 1, i)
+	print("\n==============================================================")
+
+print("\n=================================== Min Samples Node : "+str(i)+" ==========================================")	
+print("\n==================================================================================================")	
+
+for j in range(1, 50, 5):
+	for i in range(1,2001,100):
+		print("\n================= Min Samples Leaf : "+str(i)+" ========================")	
+		decisionTree(X, X_train, y_train, X_test, y_test, i, j)
+		print("\n==============================================================")
+
+
+
 
 
 clf = DecisionTreeClassifier(class_weight='balanced')
