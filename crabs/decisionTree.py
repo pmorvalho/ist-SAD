@@ -16,9 +16,8 @@ data = pd.read_csv("data/base_crabs.csv")
 X = np.array(data.drop("class",axis=1))
 y = np.array(data["class"])
 target_names = np.array(["B","O"])
-# feature_names = np.array(["sex","index","FL","RW","CL", "CW", "BD"])
+feature_names = np.array(["sex","FL","RW","CL", "CW", "BD"])
 # split dataset into training/test portions
-feature_names = np.array(["FL","RW","CL", "CW", "BD"])
 X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=0)
 
 
