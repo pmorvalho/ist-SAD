@@ -11,6 +11,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
+GRAPHS_FOLDER = "knn_graphs/"
 data = pd.read_csv("data/base_noshows.csv")
 X = np.array(data.drop("class",axis=1))
 y = np.array(data["class"])
@@ -116,8 +117,8 @@ def draw_single_metric_graph(metric,k,X_train, y_train, X_test, y_test, X_train_
 
 	plt.legend(loc="center left", bbox_to_anchor=(1.04, 0.5))	
 
-	f.savefig("%s_knn_%s.png" % (metric,filename),bbox_inches="tight")
-	f.savefig("%s_knn_%s.pdf" % (metric,filename),bbox_inches="tight")
+	f.savefig("%s%s_knn_%s.png" % (GRAPHS_FOLDER,metric,filename),bbox_inches="tight")
+	f.savefig("%s%s_knn_%s.pdf" % (GRAPHS_FOLDER,metric,filename),bbox_inches="tight")
 
 def draw_oversampled_single_metric_graph(metric, smote_vectors, adasyn_vectors,y_lim=None):
 	k_values, non_pca_sm, with_pca_sm = smote_vectors
@@ -137,8 +138,8 @@ def draw_oversampled_single_metric_graph(metric, smote_vectors, adasyn_vectors,y
 
 	plt.legend(loc="center left", bbox_to_anchor=(1.04, 0.5))	
 
-	f.savefig("%s_knn_%s.png" % (metric,"oversampled"),bbox_inches="tight")
-	f.savefig("%s_knn_%s.pdf" % (metric,"oversampled"),bbox_inches="tight")
+	f.savefig("%s%s_knn_%s.png" % (GRAPHS_FOLDER,metric,"oversampled"),bbox_inches="tight")
+	f.savefig("%s%s_knn_%s.pdf" % (GRAPHS_FOLDER,metric,"oversampled"),bbox_inches="tight")
 
 def draw_precisionrecall_graph(k,X_train, y_train, X_test, y_test, X_train_pca, X_test_pca, filename):
 	k_values,non_pca_precisions,with_pca_precisions = return_metric_vectors("precision",k,X_train, y_train, X_test, y_test, X_train_pca, X_test_pca)
@@ -158,8 +159,8 @@ def draw_precisionrecall_graph(k,X_train, y_train, X_test, y_test, X_train_pca, 
 
 	plt.legend(loc="center left", bbox_to_anchor=(1.04, 0.5))	
 	#plt.show()
-	f.savefig("precisionrecall_knn_"+filename+".png",bbox_inches="tight")
-	f.savefig("precisionrecall_knn_"+filename+".pdf",bbox_inches="tight")
+	f.savefig(GRAPHS_FOLDER+"precisionrecall_knn_"+filename+".png",bbox_inches="tight")
+	f.savefig(GRAPHS_FOLDER+"precisionrecall_knn_"+filename+".pdf",bbox_inches="tight")
 
 
 def draw_learning_curve(X, y, X_pca, filename):
@@ -197,7 +198,8 @@ def draw_learning_curve(X, y, X_pca, filename):
 
 	plt.legend(loc=9, bbox_to_anchor=(0.5, -0.1))	
 	#plt.show()
-	f.savefig("lc_knn_"+filename+".png",bbox_inches="tight")
+	f.savefig(GRAPHS_FOLDER+"lc_knn_"+filename+".png",bbox_inches="tight")
+	f.savefig(GRAPHS_FOLDER+"lc_knn_"+filename+".pdf",bbox_inches="tight")
 
 def run_non_pca_knn():	
 	print("\n================= Basic Non-PCA =============================")
