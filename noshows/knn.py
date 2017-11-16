@@ -12,7 +12,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 GRAPHS_FOLDER = "knn_graphs/"
-data = pd.read_csv("data/base_noshows.csv")
+# data = pd.read_csv("data/base_noshows.csv")
+data = pd.read_csv("data/base__dayofyear_noshows.csv")
 X = np.array(data.drop("class",axis=1))
 y = np.array(data["class"])
 target_names = np.array(["No","Yes"])
@@ -57,19 +58,19 @@ X_test_ada_pca = pca.transform(X_test)
 # using n_jobs to try and paralelize computation when possible!
 
 def run_all_knn(X, y, X_train, y_train, X_test, y_test):
-	for n in range(1,12,2):
+	for n in range(1,101,4):
 		clf = KNeighborsClassifier(n_neighbors=n, n_jobs=8)
 		clf.fit(X_train,y_train)
 		y_pred = clf.predict(X_test)
 		print("\nKNN classifier with %d neighbors" % (n))
-		print(classification_report(y_test,y_pred,target_names=target_names))
+		# print(classification_report(y_test,y_pred,target_names=target_names))
 		tn, fp, fn, tp = confusion_matrix(y_test,y_pred, labels=range(2)).ravel()
 		print("TN: %d \tFP: %d \nFN: %d \tTP: %d" % (tn, fp, fn, tp))
-		print("Accuracy score: %f" % (accuracy_score(y_test,y_pred)))
-		print("ROC auc score: %f" % (roc_auc_score(y_test,y_pred)))
-		clf = KNeighborsClassifier(n_neighbors=n, n_jobs=4)
-		clf.fit(X,y)
-		print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
+		# print("Accuracy score: %f" % (accuracy_score(y_test,y_pred)))
+		# print("ROC auc score: %f" % (roc_auc_score(y_test,y_pred)))
+		# clf = KNeighborsClassifier(n_neighbors=n, n_jobs=4)
+		# clf.fit(X,y)
+		# print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
 
 def return_metric_vectors(metric, k,X_train, y_train, X_test, y_test, X_train_pca, X_test_pca):
 	metrics_functions = {
@@ -149,6 +150,7 @@ def draw_precisionrecall_graph(k,X_train, y_train, X_test, y_test, X_train_pca, 
 	plt.title("Precision + Recall by k - " + filename)
 	plt.xlabel("k-neighbors")
 	plt.ylabel("Precsion/Recall average value")
+	plt.gca().set_ylim([0,1])
 	# plt.gca().set_ylim([0.49,0.62])
 	plt.grid()
 
@@ -159,8 +161,8 @@ def draw_precisionrecall_graph(k,X_train, y_train, X_test, y_test, X_train_pca, 
 
 	plt.legend(loc="center left", bbox_to_anchor=(1.04, 0.5))	
 	#plt.show()
-	f.savefig(GRAPHS_FOLDER+"precisionrecall_knn_"+filename+".png",bbox_inches="tight")
-	f.savefig(GRAPHS_FOLDER+"precisionrecall_knn_"+filename+".pdf",bbox_inches="tight")
+	f.savefig(GRAPHS_FOLDER+"precisionrecall_knn_"+filename.lower()+".png",bbox_inches="tight")
+	f.savefig(GRAPHS_FOLDER+"precisionrecall_knn_"+filename.lower()+".pdf",bbox_inches="tight")
 
 
 def draw_learning_curve(X, y, X_pca, filename):
@@ -184,7 +186,7 @@ def draw_learning_curve(X, y, X_pca, filename):
 	plt.title("Learning Curve KNN - " + filename)
 	plt.xlabel("Training examples")
 	plt.ylabel("Score")
-	plt.gca().set_ylim([0.46,0.86])
+	plt.gca().set_ylim([0.5,1])
 	plt.grid()
 
 	plt.plot(train_sizes, train_scores_mean, '.-', color="r",
@@ -234,16 +236,26 @@ def draw_all_learning_curves():
 	draw_learning_curve(X_ada,y_ada, X_ada_pca, "ADASYN")
 
 def draw_all_roc_graphs(k):
-	draw_single_metric_graph("roc_auc", k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default", y_lim=[0.49,0.62])
+	draw_single_metric_graph("roc_auc", k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default", y_lim=[0.5,1])
 	smote_roc_vectors = return_metric_vectors("roc_auc",k, X_train_sm, y_train_sm, X_test, y_test,  X_train_sm_pca, X_test_sm_pca)
 	adasyn_roc_vectors = return_metric_vectors("roc_auc",k, X_train_ada, y_train_ada, X_test, y_test,  X_train_ada_pca, X_test_ada_pca)
-	draw_oversampled_single_metric_graph("roc_auc",smote_roc_vectors,adasyn_roc_vectors, y_lim=[0.49,0.62])
+	draw_oversampled_single_metric_graph("roc_auc",smote_roc_vectors,adasyn_roc_vectors, y_lim=[0.5,1])
 
 def draw_all_accuracy_graphs(k):
-	draw_single_metric_graph("accuracy", k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default")
+	draw_single_metric_graph("accuracy", k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default",y_lim=[0.5,1])
 	smote_accuracy_vectors = return_metric_vectors("accuracy", k, X_train_sm, y_train_sm, X_test, y_test,  X_train_sm_pca, X_test_sm_pca)
 	adasyn_accuracy_vectors = return_metric_vectors("accuracy", k, X_train_ada, y_train_ada, X_test, y_test,  X_train_ada_pca, X_test_ada_pca)
-	draw_oversampled_single_metric_graph("accuracy",smote_accuracy_vectors,adasyn_accuracy_vectors)
+	draw_oversampled_single_metric_graph("accuracy",smote_accuracy_vectors,adasyn_accuracy_vectors,y_lim=[0.5,1])
 
 def draw_all_precisionrecall_graphs(k):
 	draw_precisionrecall_graph(k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default")
+	draw_precisionrecall_graph(k, X_train_sm, y_train_sm, X_test, y_test,  X_train_sm_pca, X_test_sm_pca, "SMOTE")
+	draw_precisionrecall_graph(k, X_train_ada, y_train_ada, X_test, y_test,  X_train_ada_pca, X_test_ada_pca, "ADASYN")
+
+if __name__ == '__main__':
+	draw_all_learning_curves()
+	draw_all_roc_graphs(101)
+	draw_all_accuracy_graphs(101)
+	draw_all_precisionrecall_graphs(101)
+	run_non_pca_knn()
+	run_pca_knn()

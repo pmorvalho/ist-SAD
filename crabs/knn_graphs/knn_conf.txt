@@ -1,0 +1,206 @@
+
+================= Basic Non-PCA =============================
+
+KNN classifier with 1 neighbors
+TN: 25 	FP: 5 
+FN: 1 	TP: 29
+
+KNN classifier with 3 neighbors
+TN: 26 	FP: 4 
+FN: 4 	TP: 26
+
+KNN classifier with 5 neighbors
+TN: 24 	FP: 6 
+FN: 4 	TP: 26
+
+KNN classifier with 7 neighbors
+TN: 25 	FP: 5 
+FN: 4 	TP: 26
+
+KNN classifier with 9 neighbors
+TN: 23 	FP: 7 
+FN: 4 	TP: 26
+
+KNN classifier with 11 neighbors
+TN: 23 	FP: 7 
+FN: 4 	TP: 26
+
+KNN classifier with 13 neighbors
+TN: 23 	FP: 7 
+FN: 5 	TP: 25
+
+KNN classifier with 15 neighbors
+TN: 22 	FP: 8 
+FN: 4 	TP: 26
+
+KNN classifier with 17 neighbors
+TN: 21 	FP: 9 
+FN: 4 	TP: 26
+
+KNN classifier with 19 neighbors
+TN: 21 	FP: 9 
+FN: 6 	TP: 24
+
+KNN classifier with 21 neighbors
+TN: 22 	FP: 8 
+FN: 7 	TP: 23
+
+KNN classifier with 23 neighbors
+TN: 18 	FP: 12 
+FN: 9 	TP: 21
+
+KNN classifier with 25 neighbors
+TN: 19 	FP: 11 
+FN: 9 	TP: 21
+
+KNN classifier with 27 neighbors
+TN: 19 	FP: 11 
+FN: 11 	TP: 19
+
+KNN classifier with 29 neighbors
+TN: 19 	FP: 11 
+FN: 12 	TP: 18
+
+KNN classifier with 31 neighbors
+TN: 20 	FP: 10 
+FN: 9 	TP: 21
+
+KNN classifier with 33 neighbors
+TN: 18 	FP: 12 
+FN: 9 	TP: 21
+
+KNN classifier with 35 neighbors
+TN: 17 	FP: 13 
+FN: 7 	TP: 23
+
+KNN classifier with 37 neighbors
+TN: 16 	FP: 14 
+FN: 6 	TP: 24
+
+KNN classifier with 39 neighbors
+TN: 19 	FP: 11 
+FN: 9 	TP: 21
+
+KNN classifier with 41 neighbors
+TN: 19 	FP: 11 
+FN: 9 	TP: 21
+
+KNN classifier with 43 neighbors
+TN: 15 	FP: 15 
+FN: 9 	TP: 21
+
+KNN classifier with 45 neighbors
+TN: 16 	FP: 14 
+FN: 9 	TP: 21
+
+KNN classifier with 47 neighbors
+TN: 16 	FP: 14 
+FN: 11 	TP: 19
+
+KNN classifier with 49 neighbors
+TN: 13 	FP: 17 
+FN: 11 	TP: 19
+===============================================================
+
+================ Basic PCA executions =======================
+
+KNN classifier with 1 neighbors
+TN: 20 	FP: 10 
+FN: 9 	TP: 21
+
+KNN classifier with 3 neighbors
+TN: 19 	FP: 11 
+FN: 13 	TP: 17
+
+KNN classifier with 5 neighbors
+TN: 16 	FP: 14 
+FN: 11 	TP: 19
+
+KNN classifier with 7 neighbors
+TN: 17 	FP: 13 
+FN: 9 	TP: 21
+
+KNN classifier with 9 neighbors
+TN: 17 	FP: 13 
+FN: 9 	TP: 21
+
+KNN classifier with 11 neighbors
+TN: 17 	FP: 13 
+FN: 8 	TP: 22
+
+KNN classifier with 13 neighbors
+TN: 18 	FP: 12 
+FN: 8 	TP: 22
+
+KNN classifier with 15 neighbors
+TN: 18 	FP: 12 
+FN: 8 	TP: 22
+
+KNN classifier with 17 neighbors
+TN: 18 	FP: 12 
+FN: 7 	TP: 23
+
+KNN classifier with 19 neighbors
+TN: 18 	FP: 12 
+FN: 9 	TP: 21
+
+KNN classifier with 21 neighbors
+TN: 18 	FP: 12 
+FN: 10 	TP: 20
+
+KNN classifier with 23 neighbors
+TN: 16 	FP: 14 
+FN: 10 	TP: 20
+
+KNN classifier with 25 neighbors
+TN: 18 	FP: 12 
+FN: 11 	TP: 19
+
+KNN classifier with 27 neighbors
+TN: 18 	FP: 12 
+FN: 12 	TP: 18
+
+KNN classifier with 29 neighbors
+TN: 16 	FP: 14 
+FN: 13 	TP: 17
+
+KNN classifier with 31 neighbors
+TN: 16 	FP: 14 
+FN: 14 	TP: 16
+
+KNN classifier with 33 neighbors
+TN: 17 	FP: 13 
+FN: 13 	TP: 17
+
+KNN classifier with 35 neighbors
+TN: 15 	FP: 15 
+FN: 8 	TP: 22
+
+KNN classifier with 37 neighbors
+TN: 15 	FP: 15 
+FN: 7 	TP: 23
+
+KNN classifier with 39 neighbors
+TN: 18 	FP: 12 
+FN: 9 	TP: 21
+
+KNN classifier with 41 neighbors
+TN: 15 	FP: 15 
+FN: 10 	TP: 20
+
+KNN classifier with 43 neighbors
+TN: 14 	FP: 16 
+FN: 9 	TP: 21
+
+KNN classifier with 45 neighbors
+TN: 15 	FP: 15 
+FN: 10 	TP: 20
+
+KNN classifier with 47 neighbors
+TN: 14 	FP: 16 
+FN: 12 	TP: 18
+
+KNN classifier with 49 neighbors
+TN: 12 	FP: 18 
+FN: 12 	TP: 18
+===============================================================
