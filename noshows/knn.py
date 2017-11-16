@@ -12,7 +12,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 GRAPHS_FOLDER = "knn_graphs/"
-data = pd.read_csv("data/base_noshows.csv")
+# data = pd.read_csv("data/base_noshows.csv")
+data = pd.read_csv("data/base__dayofyear_noshows.csv")
 X = np.array(data.drop("class",axis=1))
 y = np.array(data["class"])
 target_names = np.array(["No","Yes"])
@@ -252,9 +253,9 @@ def draw_all_precisionrecall_graphs(k):
 	draw_precisionrecall_graph(k, X_train_ada, y_train_ada, X_test, y_test,  X_train_ada_pca, X_test_ada_pca, "ADASYN")
 
 if __name__ == '__main__':
-	# draw_all_learning_curves()
-	# draw_all_roc_graphs(101)
-	# draw_all_accuracy_graphs(101)
+	draw_all_learning_curves()
+	draw_all_roc_graphs(101)
+	draw_all_accuracy_graphs(101)
 	draw_all_precisionrecall_graphs(101)
-	# run_non_pca_knn()
-	# run_pca_knn()
+	run_non_pca_knn()
+	run_pca_knn()

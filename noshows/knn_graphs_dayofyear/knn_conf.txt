@@ -1,0 +1,618 @@
+
+================= Basic Non-PCA =============================
+
+KNN classifier with 1 neighbors
+TN: 22023 	FP: 4440 
+FN: 4533 	TP: 2163
+
+KNN classifier with 5 neighbors
+TN: 24376 	FP: 2087 
+FN: 5495 	TP: 1201
+
+KNN classifier with 9 neighbors
+TN: 25083 	FP: 1380 
+FN: 5869 	TP: 827
+
+KNN classifier with 13 neighbors
+TN: 25470 	FP: 993 
+FN: 6066 	TP: 630
+
+KNN classifier with 17 neighbors
+TN: 25697 	FP: 766 
+FN: 6234 	TP: 462
+
+KNN classifier with 21 neighbors
+TN: 25830 	FP: 633 
+FN: 6298 	TP: 398
+
+KNN classifier with 25 neighbors
+TN: 25929 	FP: 534 
+FN: 6324 	TP: 372
+
+KNN classifier with 29 neighbors
+TN: 26028 	FP: 435 
+FN: 6366 	TP: 330
+
+KNN classifier with 33 neighbors
+TN: 26082 	FP: 381 
+FN: 6402 	TP: 294
+
+KNN classifier with 37 neighbors
+TN: 26123 	FP: 340 
+FN: 6446 	TP: 250
+
+KNN classifier with 41 neighbors
+TN: 26154 	FP: 309 
+FN: 6476 	TP: 220
+
+KNN classifier with 45 neighbors
+TN: 26190 	FP: 273 
+FN: 6498 	TP: 198
+
+KNN classifier with 49 neighbors
+TN: 26222 	FP: 241 
+FN: 6513 	TP: 183
+
+KNN classifier with 53 neighbors
+TN: 26244 	FP: 219 
+FN: 6538 	TP: 158
+
+KNN classifier with 57 neighbors
+TN: 26274 	FP: 189 
+FN: 6550 	TP: 146
+
+KNN classifier with 61 neighbors
+TN: 26292 	FP: 171 
+FN: 6558 	TP: 138
+
+KNN classifier with 65 neighbors
+TN: 26307 	FP: 156 
+FN: 6589 	TP: 107
+
+KNN classifier with 69 neighbors
+TN: 26324 	FP: 139 
+FN: 6595 	TP: 101
+
+KNN classifier with 73 neighbors
+TN: 26342 	FP: 121 
+FN: 6610 	TP: 86
+
+KNN classifier with 77 neighbors
+TN: 26359 	FP: 104 
+FN: 6620 	TP: 76
+
+KNN classifier with 81 neighbors
+TN: 26366 	FP: 97 
+FN: 6634 	TP: 62
+
+KNN classifier with 85 neighbors
+TN: 26385 	FP: 78 
+FN: 6638 	TP: 58
+
+KNN classifier with 89 neighbors
+TN: 26391 	FP: 72 
+FN: 6647 	TP: 49
+
+KNN classifier with 93 neighbors
+TN: 26403 	FP: 60 
+FN: 6645 	TP: 51
+
+KNN classifier with 97 neighbors
+TN: 26409 	FP: 54 
+FN: 6648 	TP: 48
+===============================================================
+
+================= (OS) SMOTE Non-PCA ========================
+
+KNN classifier with 1 neighbors
+TN: 20239 	FP: 6224 
+FN: 3834 	TP: 2862
+
+KNN classifier with 5 neighbors
+TN: 17897 	FP: 8566 
+FN: 2943 	TP: 3753
+
+KNN classifier with 9 neighbors
+TN: 16875 	FP: 9588 
+FN: 2573 	TP: 4123
+
+KNN classifier with 13 neighbors
+TN: 16385 	FP: 10078 
+FN: 2382 	TP: 4314
+
+KNN classifier with 17 neighbors
+TN: 16168 	FP: 10295 
+FN: 2272 	TP: 4424
+
+KNN classifier with 21 neighbors
+TN: 15954 	FP: 10509 
+FN: 2175 	TP: 4521
+
+KNN classifier with 25 neighbors
+TN: 15813 	FP: 10650 
+FN: 2064 	TP: 4632
+
+KNN classifier with 29 neighbors
+TN: 15716 	FP: 10747 
+FN: 2003 	TP: 4693
+
+KNN classifier with 33 neighbors
+TN: 15630 	FP: 10833 
+FN: 1956 	TP: 4740
+
+KNN classifier with 37 neighbors
+TN: 15606 	FP: 10857 
+FN: 1903 	TP: 4793
+
+KNN classifier with 41 neighbors
+TN: 15458 	FP: 11005 
+FN: 1865 	TP: 4831
+
+KNN classifier with 45 neighbors
+TN: 15322 	FP: 11141 
+FN: 1827 	TP: 4869
+
+KNN classifier with 49 neighbors
+TN: 15271 	FP: 11192 
+FN: 1818 	TP: 4878
+
+KNN classifier with 53 neighbors
+TN: 15278 	FP: 11185 
+FN: 1765 	TP: 4931
+
+KNN classifier with 57 neighbors
+TN: 15238 	FP: 11225 
+FN: 1760 	TP: 4936
+
+KNN classifier with 61 neighbors
+TN: 15244 	FP: 11219 
+FN: 1740 	TP: 4956
+
+KNN classifier with 65 neighbors
+TN: 15259 	FP: 11204 
+FN: 1716 	TP: 4980
+
+KNN classifier with 69 neighbors
+TN: 15280 	FP: 11183 
+FN: 1728 	TP: 4968
+
+KNN classifier with 73 neighbors
+TN: 15300 	FP: 11163 
+FN: 1738 	TP: 4958
+
+KNN classifier with 77 neighbors
+TN: 15314 	FP: 11149 
+FN: 1747 	TP: 4949
+
+KNN classifier with 81 neighbors
+TN: 15318 	FP: 11145 
+FN: 1752 	TP: 4944
+
+KNN classifier with 85 neighbors
+TN: 15322 	FP: 11141 
+FN: 1744 	TP: 4952
+
+KNN classifier with 89 neighbors
+TN: 15280 	FP: 11183 
+FN: 1753 	TP: 4943
+
+KNN classifier with 93 neighbors
+TN: 15268 	FP: 11195 
+FN: 1735 	TP: 4961
+
+KNN classifier with 97 neighbors
+TN: 15245 	FP: 11218 
+FN: 1731 	TP: 4965
+===============================================================
+
+================= (OS) ADASYN Non-PCA =======================
+
+KNN classifier with 1 neighbors
+TN: 19080 	FP: 7383 
+FN: 3497 	TP: 3199
+
+KNN classifier with 5 neighbors
+TN: 19252 	FP: 7211 
+FN: 3400 	TP: 3296
+
+KNN classifier with 9 neighbors
+TN: 19317 	FP: 7146 
+FN: 3391 	TP: 3305
+
+KNN classifier with 13 neighbors
+TN: 19383 	FP: 7080 
+FN: 3321 	TP: 3375
+
+KNN classifier with 17 neighbors
+TN: 19393 	FP: 7070 
+FN: 3289 	TP: 3407
+
+KNN classifier with 21 neighbors
+TN: 19340 	FP: 7123 
+FN: 3246 	TP: 3450
+
+KNN classifier with 25 neighbors
+TN: 19269 	FP: 7194 
+FN: 3207 	TP: 3489
+
+KNN classifier with 29 neighbors
+TN: 19305 	FP: 7158 
+FN: 3192 	TP: 3504
+
+KNN classifier with 33 neighbors
+TN: 19175 	FP: 7288 
+FN: 3173 	TP: 3523
+
+KNN classifier with 37 neighbors
+TN: 19184 	FP: 7279 
+FN: 3152 	TP: 3544
+
+KNN classifier with 41 neighbors
+TN: 19087 	FP: 7376 
+FN: 3097 	TP: 3599
+
+KNN classifier with 45 neighbors
+TN: 19049 	FP: 7414 
+FN: 3068 	TP: 3628
+
+KNN classifier with 49 neighbors
+TN: 18970 	FP: 7493 
+FN: 3043 	TP: 3653
+
+KNN classifier with 53 neighbors
+TN: 18976 	FP: 7487 
+FN: 3025 	TP: 3671
+
+KNN classifier with 57 neighbors
+TN: 18892 	FP: 7571 
+FN: 3000 	TP: 3696
+
+KNN classifier with 61 neighbors
+TN: 18902 	FP: 7561 
+FN: 2975 	TP: 3721
+
+KNN classifier with 65 neighbors
+TN: 18827 	FP: 7636 
+FN: 2957 	TP: 3739
+
+KNN classifier with 69 neighbors
+TN: 18760 	FP: 7703 
+FN: 2927 	TP: 3769
+
+KNN classifier with 73 neighbors
+TN: 18717 	FP: 7746 
+FN: 2945 	TP: 3751
+
+KNN classifier with 77 neighbors
+TN: 18672 	FP: 7791 
+FN: 2927 	TP: 3769
+
+KNN classifier with 81 neighbors
+TN: 18655 	FP: 7808 
+FN: 2889 	TP: 3807
+
+KNN classifier with 85 neighbors
+TN: 18596 	FP: 7867 
+FN: 2897 	TP: 3799
+
+KNN classifier with 89 neighbors
+TN: 18623 	FP: 7840 
+FN: 2880 	TP: 3816
+
+KNN classifier with 93 neighbors
+TN: 18545 	FP: 7918 
+FN: 2844 	TP: 3852
+
+KNN classifier with 97 neighbors
+TN: 18514 	FP: 7949 
+FN: 2846 	TP: 3850
+===============================================================
+
+================ Basic PCA executions =======================
+
+KNN classifier with 1 neighbors
+TN: 21873 	FP: 4590 
+FN: 4593 	TP: 2103
+
+KNN classifier with 5 neighbors
+TN: 24348 	FP: 2115 
+FN: 5582 	TP: 1114
+
+KNN classifier with 9 neighbors
+TN: 25198 	FP: 1265 
+FN: 6009 	TP: 687
+
+KNN classifier with 13 neighbors
+TN: 25678 	FP: 785 
+FN: 6248 	TP: 448
+
+KNN classifier with 17 neighbors
+TN: 25906 	FP: 557 
+FN: 6367 	TP: 329
+
+KNN classifier with 21 neighbors
+TN: 26068 	FP: 395 
+FN: 6472 	TP: 224
+
+KNN classifier with 25 neighbors
+TN: 26105 	FP: 358 
+FN: 6513 	TP: 183
+
+KNN classifier with 29 neighbors
+TN: 26166 	FP: 297 
+FN: 6535 	TP: 161
+
+KNN classifier with 33 neighbors
+TN: 26228 	FP: 235 
+FN: 6567 	TP: 129
+
+KNN classifier with 37 neighbors
+TN: 26252 	FP: 211 
+FN: 6574 	TP: 122
+
+KNN classifier with 41 neighbors
+TN: 26278 	FP: 185 
+FN: 6598 	TP: 98
+
+KNN classifier with 45 neighbors
+TN: 26311 	FP: 152 
+FN: 6609 	TP: 87
+
+KNN classifier with 49 neighbors
+TN: 26317 	FP: 146 
+FN: 6614 	TP: 82
+
+KNN classifier with 53 neighbors
+TN: 26331 	FP: 132 
+FN: 6620 	TP: 76
+
+KNN classifier with 57 neighbors
+TN: 26344 	FP: 119 
+FN: 6626 	TP: 70
+
+KNN classifier with 61 neighbors
+TN: 26349 	FP: 114 
+FN: 6630 	TP: 66
+
+KNN classifier with 65 neighbors
+TN: 26365 	FP: 98 
+FN: 6640 	TP: 56
+
+KNN classifier with 69 neighbors
+TN: 26377 	FP: 86 
+FN: 6646 	TP: 50
+
+KNN classifier with 73 neighbors
+TN: 26379 	FP: 84 
+FN: 6648 	TP: 48
+
+KNN classifier with 77 neighbors
+TN: 26379 	FP: 84 
+FN: 6647 	TP: 49
+
+KNN classifier with 81 neighbors
+TN: 26388 	FP: 75 
+FN: 6649 	TP: 47
+
+KNN classifier with 85 neighbors
+TN: 26392 	FP: 71 
+FN: 6654 	TP: 42
+
+KNN classifier with 89 neighbors
+TN: 26397 	FP: 66 
+FN: 6661 	TP: 35
+
+KNN classifier with 93 neighbors
+TN: 26402 	FP: 61 
+FN: 6659 	TP: 37
+
+KNN classifier with 97 neighbors
+TN: 26405 	FP: 58 
+FN: 6658 	TP: 38
+===============================================================
+
+================= (OS) SMOTE PCA ============================
+
+KNN classifier with 1 neighbors
+TN: 20914 	FP: 5549 
+FN: 4129 	TP: 2567
+
+KNN classifier with 5 neighbors
+TN: 20164 	FP: 6299 
+FN: 3753 	TP: 2943
+
+KNN classifier with 9 neighbors
+TN: 19430 	FP: 7033 
+FN: 3453 	TP: 3243
+
+KNN classifier with 13 neighbors
+TN: 18939 	FP: 7524 
+FN: 3310 	TP: 3386
+
+KNN classifier with 17 neighbors
+TN: 18492 	FP: 7971 
+FN: 3220 	TP: 3476
+
+KNN classifier with 21 neighbors
+TN: 18151 	FP: 8312 
+FN: 3195 	TP: 3501
+
+KNN classifier with 25 neighbors
+TN: 17778 	FP: 8685 
+FN: 3142 	TP: 3554
+
+KNN classifier with 29 neighbors
+TN: 17503 	FP: 8960 
+FN: 3139 	TP: 3557
+
+KNN classifier with 33 neighbors
+TN: 16993 	FP: 9470 
+FN: 3044 	TP: 3652
+
+KNN classifier with 37 neighbors
+TN: 16519 	FP: 9944 
+FN: 3010 	TP: 3686
+
+KNN classifier with 41 neighbors
+TN: 16045 	FP: 10418 
+FN: 2920 	TP: 3776
+
+KNN classifier with 45 neighbors
+TN: 15557 	FP: 10906 
+FN: 2817 	TP: 3879
+
+KNN classifier with 49 neighbors
+TN: 15017 	FP: 11446 
+FN: 2716 	TP: 3980
+
+KNN classifier with 53 neighbors
+TN: 14665 	FP: 11798 
+FN: 2630 	TP: 4066
+
+KNN classifier with 57 neighbors
+TN: 14455 	FP: 12008 
+FN: 2562 	TP: 4134
+
+KNN classifier with 61 neighbors
+TN: 14338 	FP: 12125 
+FN: 2541 	TP: 4155
+
+KNN classifier with 65 neighbors
+TN: 14337 	FP: 12126 
+FN: 2506 	TP: 4190
+
+KNN classifier with 69 neighbors
+TN: 14360 	FP: 12103 
+FN: 2515 	TP: 4181
+
+KNN classifier with 73 neighbors
+TN: 14561 	FP: 11902 
+FN: 2538 	TP: 4158
+
+KNN classifier with 77 neighbors
+TN: 14662 	FP: 11801 
+FN: 2555 	TP: 4141
+
+KNN classifier with 81 neighbors
+TN: 14861 	FP: 11602 
+FN: 2572 	TP: 4124
+
+KNN classifier with 85 neighbors
+TN: 15136 	FP: 11327 
+FN: 2607 	TP: 4089
+
+KNN classifier with 89 neighbors
+TN: 15373 	FP: 11090 
+FN: 2636 	TP: 4060
+
+KNN classifier with 93 neighbors
+TN: 15505 	FP: 10958 
+FN: 2666 	TP: 4030
+
+KNN classifier with 97 neighbors
+TN: 15651 	FP: 10812 
+FN: 2685 	TP: 4011
+===============================================================
+
+================= (OS) ADASYN PCA ===========================
+
+KNN classifier with 1 neighbors
+TN: 20764 	FP: 5699 
+FN: 4073 	TP: 2623
+
+KNN classifier with 5 neighbors
+TN: 20824 	FP: 5639 
+FN: 3949 	TP: 2747
+
+KNN classifier with 9 neighbors
+TN: 20193 	FP: 6270 
+FN: 3787 	TP: 2909
+
+KNN classifier with 13 neighbors
+TN: 19772 	FP: 6691 
+FN: 3625 	TP: 3071
+
+KNN classifier with 17 neighbors
+TN: 19494 	FP: 6969 
+FN: 3593 	TP: 3103
+
+KNN classifier with 21 neighbors
+TN: 19219 	FP: 7244 
+FN: 3558 	TP: 3138
+
+KNN classifier with 25 neighbors
+TN: 18773 	FP: 7690 
+FN: 3490 	TP: 3206
+
+KNN classifier with 29 neighbors
+TN: 18171 	FP: 8292 
+FN: 3423 	TP: 3273
+
+KNN classifier with 33 neighbors
+TN: 17655 	FP: 8808 
+FN: 3336 	TP: 3360
+
+KNN classifier with 37 neighbors
+TN: 17055 	FP: 9408 
+FN: 3275 	TP: 3421
+
+KNN classifier with 41 neighbors
+TN: 16243 	FP: 10220 
+FN: 3105 	TP: 3591
+
+KNN classifier with 45 neighbors
+TN: 15363 	FP: 11100 
+FN: 2932 	TP: 3764
+
+KNN classifier with 49 neighbors
+TN: 14543 	FP: 11920 
+FN: 2758 	TP: 3938
+
+KNN classifier with 53 neighbors
+TN: 13818 	FP: 12645 
+FN: 2628 	TP: 4068
+
+KNN classifier with 57 neighbors
+TN: 13455 	FP: 13008 
+FN: 2529 	TP: 4167
+
+KNN classifier with 61 neighbors
+TN: 13245 	FP: 13218 
+FN: 2439 	TP: 4257
+
+KNN classifier with 65 neighbors
+TN: 13145 	FP: 13318 
+FN: 2406 	TP: 4290
+
+KNN classifier with 69 neighbors
+TN: 13065 	FP: 13398 
+FN: 2400 	TP: 4296
+
+KNN classifier with 73 neighbors
+TN: 13151 	FP: 13312 
+FN: 2410 	TP: 4286
+
+KNN classifier with 77 neighbors
+TN: 13310 	FP: 13153 
+FN: 2432 	TP: 4264
+
+KNN classifier with 81 neighbors
+TN: 13448 	FP: 13015 
+FN: 2466 	TP: 4230
+
+KNN classifier with 85 neighbors
+TN: 13635 	FP: 12828 
+FN: 2500 	TP: 4196
+
+KNN classifier with 89 neighbors
+TN: 13764 	FP: 12699 
+FN: 2510 	TP: 4186
+
+KNN classifier with 93 neighbors
+TN: 13914 	FP: 12549 
+FN: 2518 	TP: 4178
+
+KNN classifier with 97 neighbors
+TN: 14137 	FP: 12326 
+FN: 2557 	TP: 4139
+===============================================================
