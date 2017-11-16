@@ -11,33 +11,19 @@ dataset['No-show'] = dataset['No-show'].replace('No', 0)
 dataset['No-show'] = dataset['No-show'].replace('Yes', 1)
 dataset.rename(columns={'No-show':'class'},inplace=True)
 
-# di fica com as varias localidades unicas do dataset
-di = set(dataset['Neighbourhood'])
-
-dic = []
-i=1
-# para cada uma das localidades (d) vamos atribuir um valor numerico (i) e colocar numa lista (dic)
-for d in di:
-	dic.append((d, i))
-	i+=1
-
-#fazemos da lista dic um dicionario
-dic= dict(dic)
-
-#alteramos cada uma das localicadas pelo respectivo valor numerico do dicionario
-for d in dic:
- 	dataset['Neighbourhood'] = dataset['Neighbourhood'].replace(d,dic[d])
-
-
 dataset.AppointmentDay = pd.to_datetime(pd.Series(dataset.AppointmentDay))
+# dataset.AppointmentDay = dataset.AppointmentDay.dt.dayofyear
 dataset.AppointmentDay = dataset.AppointmentDay.dt.week
 
 dataset.ScheduledDay = pd.to_datetime(pd.Series(dataset.ScheduledDay))
+# dataset.ScheduledDay = dataset.ScheduledDay.dt.dayofyear
 dataset.ScheduledDay = dataset.ScheduledDay.dt.week
 
 
 dataset.drop("PatientId",axis=1,inplace=True)
 dataset.drop("AppointmentID",axis=1,inplace=True)
+dataset.drop("Neighbourhood",axis=1,inplace=True)
 
 dataset.to_csv("data/base_noshows.csv", index=False)
+# dataset.to_csv("data/base__dayofyear_noshows.csv", index=False)
 
