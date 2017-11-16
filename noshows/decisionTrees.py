@@ -29,6 +29,8 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sampl
 
 	clf = clf.fit(X_train,y_train)
 	y_pred = clf.predict(X_test)
+
+
 	# print("\nDecision Tree Calssififer:")
 	# print(classification_report(y_test,y_pred,target_names=target_names))
 	# print(confusion_matrix(y_test,y_pred, labels=range(2)))
@@ -47,6 +49,8 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sampl
 	# os.system("rm decision-trees-examples/crabs-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
 	
 	return str(accuracy_score(y_test,y_pred))
+	# treeObj = clf.tree_
+	# return str(treeObj.node_count) +","+ str(accuracy_score(y_test,y_pred))
 
 # print("\n=================================== Min Samples Leaf =============================================")	
 # print("\n==================================================================================================")	
@@ -70,6 +74,8 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sampl
 # 	print(some[:-1])
 
 
+# for i in range(5001,2,-1):
+# 	print(decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i))	
 
 
 # clf = DecisionTreeClassifier(class_weight='balanced')
