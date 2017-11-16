@@ -22,6 +22,31 @@ X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_sta
 
 
 
+def return_metric_vectors(metric, k,X_train, y_train, X_test, y_test, X_train_pca, X_test_pca):
+	metrics_functions = {
+		"roc_auc" : roc_auc_score,
+		"accuracy" : accuracy_score,
+		"precision" : precision_score,
+		"recall" : recall_score	
+	}
+	metric_score = metrics_functions[metric]
+	k_values, non_pca_metrics, with_pca_metrics = [], [], []
+	for n in range(1,k,4):
+		k_values.append(n)
+		clf = KNeighborsClassifier(n_neighbors=n, n_jobs=8)
+		clf.fit(X_train,y_train)
+		y_pred = clf.predict(X_test)
+		non_pca_metrics.append(metric_score(y_test,y_pred))
+
+		clf = KNeighborsClassifier(n_neighbors=n, n_jobs=8)
+		clf.fit(X_train_pca,y_train)
+		y_pred = clf.predict(X_test_pca)
+		with_pca_metrics.append(metric_score(y_test,y_pred))
+
+	return [k_values,non_pca_metrics,with_pca_metrics]
+
+
+
 
 def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sample_node):
 	
@@ -48,34 +73,34 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sampl
 	# print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
 	# os.system("rm decision-trees-examples/crabs-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
 	
-	return str(accuracy_score(y_test,y_pred))
-	# treeObj = clf.tree_
-	# return str(treeObj.node_count) +","+ str(accuracy_score(y_test,y_pred))
+	# return str(accuracy_score(y_test,y_pred))
+	treeObj = clf.tree_
+	return str(treeObj.node_count) +","+ str(accuracy_score(y_test,y_pred))
 
-# print("\n=================================== Min Samples Leaf =============================================")	
+# print("\n================================== Min Samples Leaf =============================================")	
 # print("\n==================================================================================================")	
 
-# for i in range(1,401,50):
+# for i in range(1,50001,1000):
 # 	print(str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, i, 5))	
 
 # print("\n=================================== Min Samples Node =============================================")	
 # print("\n==================================================================================================")	
 
-# for i in range(2,501,50):
+# for i in range(2,50001,1000):
 # 	print(str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i))	
 
 # print("\n=================================== Min Samples Node =============================================")	
 # print("\n==================================================================================================")	
 
-# for i in range(1,2001,200):
+# for i in range(1,62501,12500):
 # 	some =""
-# 	for j in range(2, 2001, 200):
+# 	for j in range(2, 62501, 12500):
 # 		some+=str(j)+","+str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, i, j)+","
 # 	print(some[:-1])
 
 
-# for i in range(5001,2,-1):
-# 	print(decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i))	
+for i in range(50001,2,-63):
+	print(decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i))	
 
 
 # clf = DecisionTreeClassifier(class_weight='balanced')

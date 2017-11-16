@@ -34,25 +34,28 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sampl
 	# print("Accuracy score: %f" % (accuracy_score(y_test,y_pred)))
 	
 	# print("ROC auc score: %f" % (roc_auc_score(y_test,y_pred)))
-	# graph = graphviz.Source(export_graphviz(clf, out_file=None,
-	# 					 feature_names=feature_names,
- #                         class_names=target_names,  
- #                         filled=True, rounded=True,  
- #                         special_characters=True))  
-	# graph.render("decision-trees-examples/crabs-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
+	graph = graphviz.Source(export_graphviz(clf, out_file=None,
+						 feature_names=feature_names,
+                         class_names=target_names,  
+                         filled=True, rounded=True,  
+                         special_characters=True))  
+	graph.render("decision-trees-examples/crabs-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
 	# clf = DecisionTreeClassifier()
 	# clf.fit(X,y)
 	# print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
-	# os.system("rm decision-trees-examples/crabs-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
+	os.system("rm decision-trees-examples/crabs-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
 	
 	# return str(accuracy_score(y_test,y_pred))
-	treeObj = clf.tree_
-	return str(treeObj.node_count) +","+ str(accuracy_score(y_test,y_pred))
+	# treeObj = clf.tree_
+	# return str(treeObj.node_count) +","+ str(accuracy_score(y_test,y_pred))
+
+# decisionTree(X, X_train, y_train, X_test, y_test, 25, 50)
+# decisionTree(X, X_train, y_train, X_test, y_test, 20, 50)
 
 # print("\n=================================== Min Samples Leaf =============================================")	
 # print("\n==================================================================================================")	
 
-# for i in range(1,41,1):
+# for i in range(1,51,1):
 	# print(str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, i, 5))	
 
 # print("\n=================================== Min Samples Node =============================================")	
@@ -64,15 +67,15 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sampl
 # print("\n=================================== Min Samples Node =============================================")	
 # print("\n==================================================================================================")	
 
-# for i in range(1,21,2):
+# for i in range(1,51,12):
 # 	some =""
-# 	for j in range(2, 21, 2):
+# 	for j in range(2, 51, 12):
 # 		some+=str(j)+","+str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, i, j)+","
 # 	print(some[:-1])
 
 
-for i in range(101,2,-1):
-	print(decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i))	
+# for i in range(101,2,-1):
+# 	print(decisionTree(X, X_train, y_train, X_test, y_test, 1, i))	
 
 
 # clf = DecisionTreeClassifier()
@@ -102,16 +105,3 @@ for i in range(101,2,-1):
 
 # plt.legend(loc="best")
 # plt.show()
-
-# # plt.fill_between(train_sizes, train_scores_mean - train_scores_std,
-# #                  train_scores_mean + train_scores_std, alpha=0.1,
-# #                  color="r")
-# # plt.fill_between(train_sizes, test_scores_mean - test_scores_std,
-# #                  test_scores_mean + test_scores_std, alpha=0.1, color="g")
-# # plt.plot(train_sizes, train_scores_mean, 'o-', color="r",
-# #          label="Training score")
-# # plt.plot(train_sizes, test_scores_mean, 'o-', color="g",
-# #          label="Cross-validation score")
-
-# # plt.legend(loc="best")
-# # plt.show()
