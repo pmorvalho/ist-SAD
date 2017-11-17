@@ -50,7 +50,7 @@ def return_metric_vectors(metric, k,X_train, y_train, X_test, y_test, X_train_pc
 
 def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sample_node, balanced=None):
 	
-	clf = DecisionTreeClassifier(min_samples_leaf=min_sample_leaf, min_samples_split=min_sample_node, class_weight=balanced)
+	clf = DecisionTreeClassifier(min_samples_leaf=min_sample_leaf, min_samples_split=min_sample_node, class_weight="balanced")
 
 	clf = clf.fit(X_train,y_train)
 	y_pred = clf.predict(X_test)
@@ -62,16 +62,16 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sampl
 	# print("Accuracy score: %f" % (accuracy_score(y_test,y_pred)))
 	
 	# print("ROC auc score: %f" % (roc_auc_score(y_test,y_pred)))
-	# graph = graphviz.Source(export_graphviz(clf, out_file=None,
-	# 					 feature_names=feature_names,
- #                         class_names=target_names,  
- #                         filled=True, rounded=True,
- #                         special_characters=True))  
-	# graph.render("decision-trees-examples/noshows-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
+	graph = graphviz.Source(export_graphviz(clf, out_file=None,
+						 feature_names=feature_names,
+                         class_names=target_names,  
+                         filled=True, rounded=True,
+                         special_characters=True))  
+	graph.render("decision-trees-examples/noshows-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
 	# clf = DecisionTreeClassifier()
 	# clf.fit(X,y)
 	# print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
-	# os.system("rm decision-trees-examples/noshows-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
+	os.system("rm decision-trees-examples/noshows-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
 	
 	return str(accuracy_score(y_test,y_pred))
 	# treeObj = clf.tree_
@@ -105,11 +105,17 @@ def draw_precisionrecall_graph(node_vectors,node_vectors_balanced):
 # for i in range(1,50001,1000):
 # 	print(str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, i, 5))	
 
+# decisionTree(X, X_train, y_train, X_test, y_test, 19000, 5)
+
+# decisionTree(X, X_train, y_train, X_test, y_test, round(39000/3), 39000)
+# decisionTree(X, X_train, y_train, X_test, y_test, round(40000/3), 40000)
+
 # print("\n=================================== Min Samples Node =============================================")	
 # print("\n==================================================================================================")	
 
 # for i in range(2,50001,1000):
 # 	print(str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i))	
+
 
 # print("\n=================================== Min Samples Node =============================================")	
 # print("\n==================================================================================================")	
@@ -146,7 +152,7 @@ def draw_precisionrecall_graph(node_vectors,node_vectors_balanced):
 # draw_precisionrecall_graph(node_vectors,node_vectors_balanced)
 
 # for i in range(50001,2,-63):
-	# print(decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i))	
+# 	print(decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i))	
 
 
 

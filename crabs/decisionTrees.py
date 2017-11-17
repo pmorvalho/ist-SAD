@@ -19,7 +19,7 @@ target_names = np.array(["B","O"])
 feature_names = np.array(["sex","FL","RW","CL", "CW", "BD"])
 # split dataset into training/test portions
 
-X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=0)
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_state=0, stratify=y)
 
 
 def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sample_node):
@@ -46,23 +46,38 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sampl
 	os.system("rm decision-trees-examples/crabs-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
 	
 	# return str(accuracy_score(y_test,y_pred))
-	# treeObj = clf.tree_
-	# return str(treeObj.node_count) +","+ str(accuracy_score(y_test,y_pred))
+	treeObj = clf.tree_
+	return str(treeObj.node_count) +","+ str(accuracy_score(y_test,y_pred))
 
-# decisionTree(X, X_train, y_train, X_test, y_test, 25, 50)
+# decisionTree(X, X_train, y_train, X_test, y_test, 21, 5)
+# decisionTree(X, X_train, y_train, X_test, y_test, 23, 5)
+# decisionTree(X, X_train, y_train, X_test, y_test, 25, 5)
+# decisionTree(X, X_train, y_train, X_test, y_test, 26, 5)
+# decisionTree(X, X_train, y_train, X_test, y_test, 40, 5)
+# decisionTree(X, X_train, y_train, X_test, y_test, 42, 5)
+# decisionTree(X, X_train, y_train, X_test, y_test, 28, 5)
 # decisionTree(X, X_train, y_train, X_test, y_test, 20, 50)
+
+# decisionTree(X, X_train, y_train, X_test, y_test, 2, 2)
+# decisionTree(X, X_train, y_train, X_test, y_test, 12, 2)
+# decisionTree(X, X_train, y_train, X_test, y_test, round(21/3), 21)
+# decisionTree(X, X_train, y_train, X_test, y_test, round(22/3), 22)
+# decisionTree(X, X_train, y_train, X_test, y_test, round(23/3), 23)
+# decisionTree(X, X_train, y_train, X_test, y_test, round(24/3), 24)
+# decisionTree(X, X_train, y_train, X_test, y_test, round(25/3), 25)
+
 
 # print("\n=================================== Min Samples Leaf =============================================")	
 # print("\n==================================================================================================")	
 
 # for i in range(1,51,1):
-	# print(str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, i, 5))	
+# 	print(str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, i, 5))	
 
 # print("\n=================================== Min Samples Node =============================================")	
 # print("\n==================================================================================================")	
 
 # for i in range(2,51,1):
-# 	print(str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i))	
+	# print(str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i))	
 
 # print("\n=================================== Min Samples Node =============================================")	
 # print("\n==================================================================================================")	
@@ -77,6 +92,8 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sampl
 # for i in range(101,2,-1):
 # 	print(decisionTree(X, X_train, y_train, X_test, y_test, 1, i))	
 
+# print(decisionTree(X, X_train, y_train, X_test, y_test, 1, 90))
+# print(decisionTree(X, X_train, y_train, X_test, y_test, 1, 50))
 
 # clf = DecisionTreeClassifier()
 # train_sizes,train_scores, test_scores = learning_curve(
