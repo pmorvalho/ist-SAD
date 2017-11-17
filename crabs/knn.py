@@ -31,19 +31,23 @@ X_test_pca = pca.transform(X_test)
 # using n_jobs to try and paralelize computation when possible!
 
 def run_all_knn(X, y, X_train, y_train, X_test, y_test):
+	cross_val_vector = []
 	for n in range(1,51,2):
 		clf = KNeighborsClassifier(n_neighbors=n, n_jobs=8)
 		clf.fit(X_train,y_train)
 		y_pred = clf.predict(X_test)
-		print("\nKNN classifier with %d neighbors" % (n))
-		# print(classification_report(y_test,y_pred,target_names=target_names))
+		#print("\nKNN classifier with %d neighbors" % (n))
+		#print(classification_report(y_test,y_pred,target_names=target_names))
 		tn, fp, fn, tp = confusion_matrix(y_test,y_pred, labels=range(2)).ravel()
 		print("TN: %d \tFP: %d \nFN: %d \tTP: %d" % (tn, fp, fn, tp))
 		# print("Accuracy score: %f" % (accuracy_score(y_test,y_pred)))
 		# print("ROC auc score: %f" % (roc_auc_score(y_test,y_pred)))
-		# clf = KNeighborsClassifier(n_neighbors=n, n_jobs=4)
-		# clf.fit(X,y)
-		# print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
+		clf = KNeighborsClassifier(n_neighbors=n, n_jobs=8)
+		clf.fit(X,y)
+		#print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
+		cross_val_vector.append(cross_val_score(clf, X, y, cv=10).mean())
+	return cross_val_vector
+
 
 def return_metric_vectors(metric, k,X_train, y_train, X_test, y_test, X_train_pca, X_test_pca):
 	metrics_functions = {
@@ -73,7 +77,7 @@ metrics_titles = {
 	"roc_auc" : "AUC ROC score",
 	"accuracy" : "Accuracy score",
 	"precision" : "Precision score",
-	"recall" : "Recall score"	
+	"recall" : "Sensibility score"	
 }
 
 def draw_single_metric_graph(metric,k,X_train, y_train, X_test, y_test, X_train_pca, X_test_pca,filename,y_lim=None):
@@ -99,17 +103,17 @@ def draw_precisionrecall_graph(k,X_train, y_train, X_test, y_test, X_train_pca, 
 	k_values,non_pca_recalls,with_pca_recalls = return_metric_vectors("recall",k,X_train, y_train, X_test, y_test, X_train_pca, X_test_pca)
 
 	f = plt.figure()
-	plt.title("Precision + Recall by k - " + filename)
+	plt.title("Precision + Sensibility by k - " + filename)
 	plt.xlabel("k-neighbors")
-	plt.ylabel("Precsion/Recall average value")
+	plt.ylabel("Precsion/Sensibility average value")
 	plt.gca().set_ylim([0,1])
 	# plt.gca().set_ylim([0.49,0.62])
 	plt.grid()
 
 	plt.plot(k_values, non_pca_precisions, '.-', color="r", label="Precision Non-PCA")
 	plt.plot(k_values, with_pca_precisions, '.-', color="g", label="Precision with PCA")
-	plt.plot(k_values, non_pca_recalls, '.-', color="b", label="Recall Non-PCA")
-	plt.plot(k_values, with_pca_recalls, '.-', color="y", label="Recall with PCA")
+	plt.plot(k_values, non_pca_recalls, '.-', color="b", label="Sensibility Non-PCA")
+	plt.plot(k_values, with_pca_recalls, '.-', color="y", label="Sensibility with PCA")
 
 	plt.legend(loc="center left", bbox_to_anchor=(1.04, 0.5))	
 	#plt.show()
@@ -138,7 +142,7 @@ def draw_learning_curve(X, y, X_pca, filename):
 	plt.title("Learning Curve KNN - " + filename)
 	plt.xlabel("Training examples")
 	plt.ylabel("Score")
-	plt.gca().set_ylim([0,1])
+	plt.gca().set_ylim([0,1.1])
 	plt.grid()
 
 	plt.plot(train_sizes, train_scores_mean, '.-', color="r",
@@ -150,10 +154,26 @@ def draw_learning_curve(X, y, X_pca, filename):
 	plt.plot(train_sizes_pca, test_scores_mean_pca, '.-', color="y",
 	         label="Cross-validation score with PCA")
 
-	plt.legend(loc=9, bbox_to_anchor=(0.5, -0.1))	
+	plt.legend(loc="center left", bbox_to_anchor=(1.04, 0.5))	
 	#plt.show()
 	f.savefig(GRAPHS_FOLDER+"lc_knn_"+filename+".png",bbox_inches="tight")
 	f.savefig(GRAPHS_FOLDER+"lc_knn_"+filename+".pdf",bbox_inches="tight")
+
+def draw_crossval_graph(cross_val_vector, cross_val_vector_pca, k_values):
+	f = plt.figure()
+	plt.title("%s by %s - %s" % ("10-fold cross-validation score","k-neighbors","default"))
+	plt.xlabel("k-neighbors")
+	plt.ylabel("10-fold cross-validation score")
+	plt.gca().set_ylim([0,1])
+	plt.grid()
+
+	plt.plot(k_values, cross_val_vector, '.-', color="r", label="Non-PCA")
+	plt.plot(k_values, cross_val_vector_pca, '.-', color="b", label="with PCA")
+
+	plt.legend(loc="center left", bbox_to_anchor=(1.04, 0.5))	
+
+	f.savefig("%s%s_knn_%s.png" % (GRAPHS_FOLDER,"crossval","default"),bbox_inches="tight")
+	f.savefig("%s%s_knn_%s.pdf" % (GRAPHS_FOLDER,"crossval","default"),bbox_inches="tight")
 
 def run_non_pca_knn():	
 	print("\n================= Basic Non-PCA =============================")
@@ -174,15 +194,21 @@ def draw_all_roc_graphs(k):
 	draw_single_metric_graph("roc_auc", k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default", y_lim=[0.5,1])
 
 def draw_all_accuracy_graphs(k):
-	draw_single_metric_graph("accuracy", k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default",y_lim=[0.5,1])
+	draw_single_metric_graph("accuracy", k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default",y_lim=[0,1])
 
 def draw_all_precisionrecall_graphs(k):
 	draw_precisionrecall_graph(k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default")
+
 
 if __name__ == '__main__':
 	draw_all_learning_curves()
 	draw_all_roc_graphs(51)
 	draw_all_accuracy_graphs(51)
 	draw_all_precisionrecall_graphs(51)
-	run_non_pca_knn()
-	run_pca_knn()
+	#run_non_pca_knn()
+	#run_pca_knn()
+	# draw_crossval_graph(
+	# 	run_all_knn(X, y, X_train, y_train, X_test, y_test),
+	# 	run_all_knn(X_pca, y, X_train_pca,y_train,X_test_pca,y_test),
+	# 	list(range(1,51,2))
+	# )

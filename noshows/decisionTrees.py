@@ -1,6 +1,6 @@
 from sklearn.decomposition import PCA
 from sklearn.metrics import classification_report, confusion_matrix
-from sklearn.metrics import accuracy_score, roc_auc_score
+from sklearn.metrics import accuracy_score, roc_auc_score, recall_score
 from sklearn.tree import *
 from sklearn.model_selection import train_test_split
 from sklearn.model_selection import cross_val_score
@@ -23,9 +23,9 @@ X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3,random_sta
 
 
 
-def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sample_node):
+def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sample_node, balanced=None):
 	
-	clf = DecisionTreeClassifier(min_samples_leaf=min_sample_leaf, min_samples_split=min_sample_node, class_weight='balanced')
+	clf = DecisionTreeClassifier(min_samples_leaf=min_sample_leaf, min_samples_split=min_sample_node, class_weight=balanced)
 
 	clf = clf.fit(X_train,y_train)
 	y_pred = clf.predict(X_test)
@@ -48,9 +48,30 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sampl
 	# print("Cross-Validation (10-fold) score: %f" % (cross_val_score(clf, X, y, cv=10).mean()))
 	# os.system("rm decision-trees-examples/crabs-dt-"+str(min_sample_leaf)+"samples_leaf-"+str(min_sample_node)+"samples_node")
 	
-	return str(accuracy_score(y_test,y_pred))
-	# treeObj = clf.tree_
-	# return str(treeObj.node_count) +","+ str(accuracy_score(y_test,y_pred))
+	# return str(accuracy_score(y_test,y_pred))
+	treeObj = clf.tree_
+	return [treeObj.node_count, accuracy_score(y_test,y_pred),recall_score(y_test,y_pred)]
+
+def draw_precisionrecall_graph(node_vectors,node_vectors_balanced):
+	node_counts, accuracy_values, recall_values = node_vectors
+	node_counts_bal, accuracy_values_bal, recall_values_bal = node_vectors_balanced
+
+	f = plt.figure()
+	plt.title("Accuracy + Sensibility by Number of Nodes")
+	plt.xlabel("Number of nodes")
+	plt.ylabel("Accuracy/Sensibility average value")
+	plt.gca().set_ylim([0,1])
+	plt.grid()
+
+	plt.plot(node_counts, accuracy_values, '.-', color="r", label="Accuracy Default")
+	plt.plot(node_counts_bal, accuracy_values_bal, '.-', color="b", label="Accuracy Balanced")
+	plt.plot(node_counts, recall_values, '.-', color="g", label="Sensibility Default")
+	plt.plot(node_counts_bal, recall_values_bal, '.-', color="y", label="Sensibility Balanced")
+
+	plt.legend(loc="center left", bbox_to_anchor=(1.04, 0.5))	
+	#plt.show()
+	f.savefig("precisionrecall_dts.png",bbox_inches="tight")
+	f.savefig("precisionrecall_dts.pdf",bbox_inches="tight")
 
 # print("\n=================================== Min Samples Leaf =============================================")	
 # print("\n==================================================================================================")	
@@ -73,9 +94,24 @@ def decisionTree(X, X_train, y_train, X_test, y_test, min_sample_leaf, min_sampl
 # 		some+=str(j)+","+str(i)+","+decisionTree(X, X_train, y_train, X_test, y_test, i, j)+","
 # 	print(some[:-1])
 
+node_counts, accuracy_values, recall_values = [], [], []
+for i in range(50001,2,-63):
+	nc, av, rv = decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i)
+	node_counts.append(nc)
+	accuracy_values.append(av)
+	recall_values.append(rv)
 
-# for i in range(5001,2,-1):
-# 	print(decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i))	
+node_counts_bal, accuracy_values_bal, recall_values_bal = [], [], []
+for i in range(50001,2,-63):
+	nc, av, rv = decisionTree(X, X_train, y_train, X_test, y_test, round(i/3), i, balanced='balanced')
+	node_counts_bal.append(nc)
+	accuracy_values_bal.append(av)
+	recall_values_bal.append(rv)
+
+node_vectors = [node_counts, accuracy_values, recall_values]
+node_vectors_balanced = [node_counts_bal, accuracy_values_bal, recall_values_bal]
+draw_precisionrecall_graph(node_vectors,node_vectors_balanced)
+
 
 
 # clf = DecisionTreeClassifier(class_weight='balanced')

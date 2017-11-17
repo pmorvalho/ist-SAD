@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 
 GRAPHS_FOLDER = "knn_graphs/"
 # data = pd.read_csv("data/base_noshows.csv")
-data = pd.read_csv("data/base__dayofyear_noshows.csv")
+data = pd.read_csv("data/base_noshows.csv")
 X = np.array(data.drop("class",axis=1))
 y = np.array(data["class"])
 target_names = np.array(["No","Yes"])
@@ -42,16 +42,16 @@ X_train_sm_pca = pca.transform(X_train_sm)
 X_test_sm_pca = pca.transform(X_test)
 
 
-ada = ADASYN(random_state=2)
-X_ada, y_ada = ada.fit_sample(X,y)
-X_train_ada, y_train_ada = ada.fit_sample(X_train,y_train)
+# ada = ADASYN(random_state=2)
+# X_ada, y_ada = ada.fit_sample(X,y)
+# X_train_ada, y_train_ada = ada.fit_sample(X_train,y_train)
 
-pca = PCA(n_components=2).fit(X_ada)
-X_ada_pca = pca.transform(X_ada)
+# pca = PCA(n_components=2).fit(X_ada)
+# X_ada_pca = pca.transform(X_ada)
 
-pca = PCA(n_components=2).fit(X_train_ada)
-X_train_ada_pca = pca.transform(X_train_ada)
-X_test_ada_pca = pca.transform(X_test)
+# pca = PCA(n_components=2).fit(X_train_ada)
+# X_train_ada_pca = pca.transform(X_train_ada)
+# X_test_ada_pca = pca.transform(X_test)
 
 
 
@@ -100,7 +100,7 @@ metrics_titles = {
 	"roc_auc" : "AUC ROC score",
 	"accuracy" : "Accuracy score",
 	"precision" : "Precision score",
-	"recall" : "Recall score"	
+	"recall" : "Sensibility score"	
 }
 
 def draw_single_metric_graph(metric,k,X_train, y_train, X_test, y_test, X_train_pca, X_test_pca,filename,y_lim=None):
@@ -125,17 +125,17 @@ def draw_oversampled_single_metric_graph(metric, smote_vectors, adasyn_vectors,y
 	k_values, non_pca_sm, with_pca_sm = smote_vectors
 	k_values, non_pca_ada, with_pca_ada = adasyn_vectors
 	f = plt.figure()
-	plt.title("%s by %s - %s" % (metrics_titles[metric],"k-neighbors","Over-sampling"))
+	plt.title("%s by %s - %s" % (metrics_titles[metric],"k-neighbors","Default + Over-sampling"))
 	plt.xlabel("k-neighbors")
 	plt.ylabel(metrics_titles[metric])
 	if y_lim is not None:
 		plt.gca().set_ylim(y_lim)
 	plt.grid()
 
+	plt.plot(k_values, non_pca_ada, '.-', color="b", label="default Non-PCA")
+	plt.plot(k_values, with_pca_ada, '.-', color="y", label="default with PCA")
 	plt.plot(k_values, non_pca_sm, '.-', color="r", label="SMOTE Non-PCA")
-	plt.plot(k_values, non_pca_ada, '.-', color="b", label="ADASYN Non-PCA")
 	plt.plot(k_values, with_pca_sm, '.-', color="g", label="SMOTE with PCA")
-	plt.plot(k_values, with_pca_ada, '.-', color="y", label="ADASYN with PCA")
 
 	plt.legend(loc="center left", bbox_to_anchor=(1.04, 0.5))	
 
@@ -147,17 +147,17 @@ def draw_precisionrecall_graph(k,X_train, y_train, X_test, y_test, X_train_pca, 
 	k_values,non_pca_recalls,with_pca_recalls = return_metric_vectors("recall",k,X_train, y_train, X_test, y_test, X_train_pca, X_test_pca)
 
 	f = plt.figure()
-	plt.title("Precision + Recall by k - " + filename)
+	plt.title("Precision + Sensibility by k - " + filename)
 	plt.xlabel("k-neighbors")
-	plt.ylabel("Precsion/Recall average value")
+	plt.ylabel("Precsion/Sensibility average value")
 	plt.gca().set_ylim([0,1])
 	# plt.gca().set_ylim([0.49,0.62])
 	plt.grid()
 
 	plt.plot(k_values, non_pca_precisions, '.-', color="r", label="Precision Non-PCA")
-	plt.plot(k_values, with_pca_precisions, '.-', color="g", label="Precision with PCA")
-	plt.plot(k_values, non_pca_recalls, '.-', color="b", label="Recall Non-PCA")
-	plt.plot(k_values, with_pca_recalls, '.-', color="y", label="Recall with PCA")
+	plt.plot(k_values, with_pca_precisions, '.-', color="b", label="Precision with PCA")
+	plt.plot(k_values, non_pca_recalls, '.-', color="g", label="Sensibility Non-PCA")
+	plt.plot(k_values, with_pca_recalls, '.-', color="y", label="Sensibility with PCA")
 
 	plt.legend(loc="center left", bbox_to_anchor=(1.04, 0.5))	
 	#plt.show()
@@ -212,9 +212,9 @@ def run_non_pca_knn():
 	run_all_knn(X, y, X_train_sm, y_train_sm, X_test, y_test)
 	print("===============================================================")
 
-	print("\n================= (OS) ADASYN Non-PCA =======================")
-	run_all_knn(X, y, X_train_ada, y_train_ada, X_test, y_test)
-	print("===============================================================")
+	# print("\n================= (OS) ADASYN Non-PCA =======================")
+	# run_all_knn(X, y, X_train_ada, y_train_ada, X_test, y_test)
+	# print("===============================================================")
 
 
 def run_pca_knn():
@@ -226,36 +226,38 @@ def run_pca_knn():
 	run_all_knn(X_sm_pca, y_sm, X_train_sm_pca,y_train_sm,X_test_sm_pca,y_test)
 	print("===============================================================")
 
-	print("\n================= (OS) ADASYN PCA ===========================")
-	run_all_knn(X_ada_pca, y_ada, X_train_ada_pca,y_train_ada,X_test_ada_pca,y_test)
-	print("===============================================================")
+	# print("\n================= (OS) ADASYN PCA ===========================")
+	# run_all_knn(X_ada_pca, y_ada, X_train_ada_pca,y_train_ada,X_test_ada_pca,y_test)
+	# print("===============================================================")
 
 def draw_all_learning_curves():
 	draw_learning_curve(X,y,X_pca,"default")
 	draw_learning_curve(X_sm,y_sm,X_sm_pca, "SMOTE")
-	draw_learning_curve(X_ada,y_ada, X_ada_pca, "ADASYN")
+	#draw_learning_curve(X_ada,y_ada, X_ada_pca, "ADASYN")
 
 def draw_all_roc_graphs(k):
-	draw_single_metric_graph("roc_auc", k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default", y_lim=[0.5,1])
+	#draw_single_metric_graph("roc_auc", k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default", y_lim=[0.5,1])
 	smote_roc_vectors = return_metric_vectors("roc_auc",k, X_train_sm, y_train_sm, X_test, y_test,  X_train_sm_pca, X_test_sm_pca)
-	adasyn_roc_vectors = return_metric_vectors("roc_auc",k, X_train_ada, y_train_ada, X_test, y_test,  X_train_ada_pca, X_test_ada_pca)
+	# adasyn_roc_vectors = return_metric_vectors("roc_auc",k, X_train_ada, y_train_ada, X_test, y_test,  X_train_ada_pca, X_test_ada_pca)
+	adasyn_roc_vectors = return_metric_vectors("roc_auc",k,X_train, y_train, X_test, y_test, X_train_pca, X_test_pca)
 	draw_oversampled_single_metric_graph("roc_auc",smote_roc_vectors,adasyn_roc_vectors, y_lim=[0.5,1])
 
 def draw_all_accuracy_graphs(k):
-	draw_single_metric_graph("accuracy", k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default",y_lim=[0.5,1])
+	#draw_single_metric_graph("accuracy", k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default",y_lim=[0.5,1])
 	smote_accuracy_vectors = return_metric_vectors("accuracy", k, X_train_sm, y_train_sm, X_test, y_test,  X_train_sm_pca, X_test_sm_pca)
-	adasyn_accuracy_vectors = return_metric_vectors("accuracy", k, X_train_ada, y_train_ada, X_test, y_test,  X_train_ada_pca, X_test_ada_pca)
-	draw_oversampled_single_metric_graph("accuracy",smote_accuracy_vectors,adasyn_accuracy_vectors,y_lim=[0.5,1])
+	# adasyn_accuracy_vectors = return_metric_vectors("accuracy", k, X_train_ada, y_train_ada, X_test, y_test,  X_train_ada_pca, X_test_ada_pca)
+	adasyn_accuracy_vectors = return_metric_vectors("accuracy",k,X_train, y_train, X_test, y_test, X_train_pca, X_test_pca)
+	draw_oversampled_single_metric_graph("accuracy",smote_accuracy_vectors,adasyn_accuracy_vectors,y_lim=[0,1])
 
 def draw_all_precisionrecall_graphs(k):
 	draw_precisionrecall_graph(k, X_train, y_train, X_test, y_test,  X_train_pca, X_test_pca, "default")
 	draw_precisionrecall_graph(k, X_train_sm, y_train_sm, X_test, y_test,  X_train_sm_pca, X_test_sm_pca, "SMOTE")
-	draw_precisionrecall_graph(k, X_train_ada, y_train_ada, X_test, y_test,  X_train_ada_pca, X_test_ada_pca, "ADASYN")
+	# draw_precisionrecall_graph(k, X_train_ada, y_train_ada, X_test, y_test,  X_train_ada_pca, X_test_ada_pca, "ADASYN")
 
 if __name__ == '__main__':
-	draw_all_learning_curves()
-	draw_all_roc_graphs(101)
-	draw_all_accuracy_graphs(101)
+	#draw_all_learning_curves()
+	# draw_all_roc_graphs(101)
+	# draw_all_accuracy_graphs(101)
 	draw_all_precisionrecall_graphs(101)
-	run_non_pca_knn()
-	run_pca_knn()
+	#run_non_pca_knn()
+	#run_pca_knn()
