@@ -1,0 +1,4 @@
+"rules","support","confidence","lift","count"
+"{ScheduledDay=[18,20),AppointmentDay=[17,20)} => {SMS_received=0}",0.211245292584009,0.903476846832895,1.33024547029055,23335
+"{ScheduledDay=[18,20),AppointmentDay=[17,20),Alcoholism=0} => {SMS_received=0}",0.203803954229432,0.902939878875386,1.32945485878161,22513
+"{ScheduledDay=[18,20),AppointmentDay=[17,20),Handcap=0} => {SMS_received=0}",0.205994713209733,0.902546406473108,1.32887552475369,22755
